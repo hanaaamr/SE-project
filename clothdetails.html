@@ -136,16 +136,30 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="quantityDropdown">
                               <!-- Dropdown items will go here -->
-                              <li><a class="dropdown-item" href="#">1</a></li>
-                              <li><a class="dropdown-item" href="#">2</a></li>
-                              <li><a class="dropdown-item" href="#">3</a></li>
-                              <li><a class="dropdown-item" href="#">4</a></li>
-                              <li><a class="dropdown-item" href="#">5</a></li>
-                              <li><a class="dropdown-item" href="#">6</a></li>
-                              <li><a class="dropdown-item" href="#">7</a></li>
-                              <li><a class="dropdown-item" href="#">8</a></li>
-                              <li><a class="dropdown-item" href="#">9</a></li>
-                              <li><a class="dropdown-item" href="#">10</a></li>
+                              <li><a class="dropdown-item" href="#" data-quantity="1">1</a></li>
+                              <li><a class="dropdown-item" href="#" data-quantity="2">2</a></li>
+                              <li><a class="dropdown-item" href="#" data-quantity="3">3</a></li>
+                              <li><a class="dropdown-item" href="#" data-quantity="4">4</a></li>
+                              <li><a class="dropdown-item" href="#" data-quantity="5">5</a></li>
+                              <li><a class="dropdown-item" href="#" data-quantity="6">6</a></li>
+                              <li><a class="dropdown-item" href="#" data-quantity="7">7</a></li>
+                              <li><a class="dropdown-item" href="#" data-quantity="8">8</a></li>
+                              <li><a class="dropdown-item" href="#" data-quantity="9">9</a></li>
+                              <li><a class="dropdown-item" href="#" data-quantity="10">10</a></li>
+                              <script>
+                                // Get the button and dropdown items
+                                const button = document.getElementById('quantityDropdown');
+                                const dropdownItems = document.querySelectorAll('.dropdown-item');
+                            
+                                // Add click event listeners to dropdown items
+                                dropdownItems.forEach(item => {
+                                    item.addEventListener('click', function() {
+                                        // Update the button text with the selected quantity
+                                        button.textContent = item.dataset.quantity;
+                                    });
+                                });
+                            </script>
+                            
                               <!-- Add more items as needed -->
                             </ul>
                           </div>
