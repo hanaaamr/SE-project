@@ -1,3 +1,8 @@
 function submitted() {
     alert('Your Post is Submitted!');
-    window.location.href = "organization.html";}
+    redirectToPage( "organization.html");
+}
+
+function redirectToPage(pageUrl) {
+    window.location.href = pageUrl;
+}
