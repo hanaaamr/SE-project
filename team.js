@@ -182,7 +182,7 @@ function View() {
 //  window.location.href = "/Users/hanaamr/Desktop/free-nonprofit-website-template/test2.html";
 //   console.log("Request rejected");
   // Add your custom functionality here
-  redirectToPage('test2.html');
+  redirectToPage('Registered_Org.html');
 
 }
 
