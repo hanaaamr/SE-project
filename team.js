@@ -38,6 +38,7 @@ function searchRegOrganizations() {
     }
 }
 
+<<<<<<< HEAD
 function redirectToPage(pageUrl) {
     window.location.href = pageUrl;
 }
@@ -92,6 +93,261 @@ function Del(id) {
 
 
 
+=======
+
+
+
+
+
+
+////////hana
+
+
+
+
+function accessDetails() {
+    // alert("Access button clicked!");
+    // window.location.href = "/Users/hanaamr/Desktop/free-nonprofit-website-template/testimonial.html";
+    redirectToPage('testimonial.html');
+     // Add your custom functionality here
+ }
+ function View2() {
+     // alert("Access button clicked!");
+     // window.location.href = "/Users/hanaamr/Desktop/free-nonprofit-website-template/testimonial.html";
+     redirectToPage('testimonial.html');
+      // Add your custom functionality here
+  }
+  
+  function View() {
+     // alert("Access button clicked!");
+    //  window.location.href = "/Users/hanaamr/Desktop/free-nonprofit-website-template/test2.html";
+  //   console.log("Request rejected");
+      // Add your custom functionality here
+      redirectToPage('test2.html');
+ 
+  }
+ 
+   function View3() {
+     // alert("Access button clicked!");
+      window.location.href = "/Users/hanaamr/Desktop/free-nonprofit-website-template/about.html";
+  //   console.log("Request rejected");
+      // Add your custom functionality here
+      redirectToPage('about.html');
+  }
+ 
+ //  function viewpendingD(pageUrl){
+ //     window.location.href = "file:///Users/hanaamr/Desktop/free-nonprofit-website-template/pendingd.html";
+    
+ 
+   
+ 
+ //  }
+ 
+ 
+ function viewpendingD() {
+     redirectToPage('pendingd.html');
+ }
+ 
+ 
+  function viewpendingDD(){
+    // window.location.href = "file:///Users/hanaamr/Desktop/free-nonprofit-website-template/test3.html";
+    redirectToPage('test3.html')
+ 
+  }
+ 
+ 
+ 
+ 
+ 
+ 
+ function acceptRequest() {
+     // Add code to handle accepting the request
+     console.log("Request accepted");
+ }
+ 
+ function rejectRequest() {
+     // Add code to handle rejecting the request
+     console.log("Request rejected");
+ }
+ 
+ 
+ 
+ // Function to open the popup
+ function openPopup() {
+     document.getElementById("popup").style.display = "block";
+   }
+   
+   // Function to close the popup
+   function closePopup() {
+     document.getElementById("popup").style.display = "none";
+   }
+ 
+   function Del(id,id2) {
+     var element = document.getElementById(id);
+     if (element) {
+         element.parentNode.removeChild(element);
+         if (id2==='acceptButtonn')
+         alert("accepted successfully");
+     else
+     alert("Rejected successfully");
+ 
+     } else {
+         console.log("Element with ID " + id + " not found.");
+     }
+ }
+ 
+ 
+ 
+ function downloadPDF() {
+     var url = "/Users/hanaamr/Downloads";
+     var xhr = new XMLHttpRequest();
+     xhr.open("GET", url, true);
+     xhr.responseType = "blob";
+     xhr.onload = function() {
+         var blob = xhr.response;
+         var link = document.createElement("a");
+         link.href = window.URL.createObjectURL(blob);
+         link.download = "ca_tut5.pdf";
+         link.click();
+     };
+     xhr.send();
+ }
+ 
+ function greetUser() {
+     alert("Hello! Welcome to our website.");
+ }
+ 
+ function downloadFile() {
+     var anchor = document.createElement('a');
+     anchor.href = 'https://github.com/adobe/pdfjs-dist/raw/master/examples/learning/helloworld.pdf';
+     anchor.download = 'helloworld.pdf';
+     anchor.click();
+ }
+ function downloadLocalFile() {
+     // var anchor = document.createElement('a');
+     // anchor.href = 'file:///Users/hanaamr/Downloads/Charities_How_important_is_performance_to_donors.pdf'; // Replace with the path to your local file
+     // anchor.download = 'NETWORKS'; // Specify the filename for the downloaded file
+     // anchor.click();/
+     alert("File Downloaded Successfully");
+ }
+ function goBack() {
+     window.history.back();
+ }
+ 
+ function goHome() {
+     redirectToPage('Home.html'); 
+ }
+ function change(){
+     redirectToPage('change_pass.html')
+ 
+ }
+ function Login(){
+     redirectToPage('Login.html')
+ }
+ function log2() {
+     var name = document.getElementById('name').value;
+     var pass = document.getElementById('password').value;
+     
+     if (name === "hana" && pass === "hana") {
+ 
+         alert('correct username or password');
+         redirectToPage('team.html');
+         
+        
+     } 
+     else
+     if(name==="sarah" && pass === "sarah"){
+         alert('correct username or password');
+         redirectToPage('donorhome.html');
+         
+ 
+     }
+ 
+     else
+     if(name==="menna" && pass === "menna"){
+         redirectToPage('organization.html');
+ 
+ 
+ 
+     }
+     else {
+         alert('Invalid username or password');
+         return false; 
+     }
+ }
+ function Oreg(){
+ 
+     redirectToPage( 'register.html');
+ }
+ 
+ 
+ function Dreg(){
+ 
+ 
+     redirectToPage( 'registrationform.html');
+ }
+
+
+
+
+
+
+
+ function submitDonation2() {
+    // Display a confirmation message
+    alert("Donation pickup is done successfully");
+}
+function submitDonation3() {
+    // Display a confirmation message
+    alert("Donation Drop-off is done successfully");
+}
+function updatemessage() {
+    // Display a confirmation message
+    alert("updating the profile is done successfully");
+}
+function alerttt() {
+    // Display a confirmation message
+    console.log("Button clicked!");
+    alert("Your infomation has been updated successfully");
+}
+function calculateETA() {
+    const pickupTime = document.querySelector('input[name="pickupTime"]:checked');
+    if (pickupTime) {
+        const etaDisplay = document.getElementById('eta');
+        let etaMinutes;
+
+        switch (pickupTime.value) {
+            case 'morning':
+                etaMinutes = 30;
+                break;
+            case 'afternoon':
+                etaMinutes = 45;
+                break;
+            case 'evening':
+                etaMinutes = 60;
+                break;
+            default:
+                etaMinutes = 0;
+        }
+
+        const now = new Date();
+        const etaTime = new Date(now.getTime() + etaMinutes * 60000);
+        const etaString = etaTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+        etaDisplay.textContent = `Estimated Time of Arrival (ETA): ${etaString}`;
+    }
+}
+
+function submitDonation() {
+    const pickupTime = document.querySelector('input[name="pickupTime"]:checked');
+    if (!pickupTime) {
+        alert('Please select a pickup time slot before submitting.');
+        return false;
+    }
+    // Simulate form submission success
+    alert('Donation submitted successfully!');
+    return true;
+}
+>>>>>>> eae5e67127f104c0673560bbf6131f5501c907d4
 function searchRegOrganizations() {
 var category = document.getElementById("categoryFilter").value.toLowerCase();
 var searchInput = document.getElementById("searchInput").value.toLowerCase();
