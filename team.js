@@ -1,22 +1,4 @@
-function accessDetails() {
-   // alert("Access button clicked!");
-    window.location.href = "/Users/hanaamr/Desktop/free-nonprofit-website-template/testimonial.html";
-
-    // Add your custom functionality here
-}
-function View2() {
-    // alert("Access button clicked!");
-     window.location.href = "/Users/hanaamr/Desktop/free-nonprofit-website-template/testimonial.html";
- 
-     // Add your custom functionality here
- }
- 
- function View() {
-    // alert("Access button clicked!");
-     window.location.href = "/Users/hanaamr/Desktop/free-nonprofit-website-template/test2.html";
- 
-     // Add your custom functionality here
- }
+///karin
     var organizations = [
         { name: "Food Bank" },
         { name: "Ahl Masr" },
@@ -177,3 +159,198 @@ function searchRegOrganizations() {
         alert("Not found");
     }
 }
+
+
+
+
+
+
+
+////////hana
+
+
+
+
+function accessDetails() {
+    // alert("Access button clicked!");
+    // window.location.href = "/Users/hanaamr/Desktop/free-nonprofit-website-template/testimonial.html";
+    redirectToPage('testimonial.html');
+     // Add your custom functionality here
+ }
+ function View2() {
+     // alert("Access button clicked!");
+     // window.location.href = "/Users/hanaamr/Desktop/free-nonprofit-website-template/testimonial.html";
+     redirectToPage('testimonial.html');
+      // Add your custom functionality here
+  }
+  
+  function View() {
+     // alert("Access button clicked!");
+    //  window.location.href = "/Users/hanaamr/Desktop/free-nonprofit-website-template/test2.html";
+  //   console.log("Request rejected");
+      // Add your custom functionality here
+      redirectToPage('test2.html');
+ 
+  }
+ 
+   function View3() {
+     // alert("Access button clicked!");
+      window.location.href = "/Users/hanaamr/Desktop/free-nonprofit-website-template/about.html";
+  //   console.log("Request rejected");
+      // Add your custom functionality here
+      redirectToPage('about.html');
+  }
+ 
+ //  function viewpendingD(pageUrl){
+ //     window.location.href = "file:///Users/hanaamr/Desktop/free-nonprofit-website-template/pendingd.html";
+    
+ 
+   
+ 
+ //  }
+  function redirectToPage(pageUrl) {
+     window.location.href = pageUrl;
+ }
+ 
+ function viewpendingD() {
+     redirectToPage('pendingd.html');
+ }
+ 
+ 
+  function viewpendingDD(){
+    // window.location.href = "file:///Users/hanaamr/Desktop/free-nonprofit-website-template/test3.html";
+    redirectToPage('test3.html')
+ 
+  }
+ 
+ 
+ 
+ 
+ 
+ 
+ function acceptRequest() {
+     // Add code to handle accepting the request
+     console.log("Request accepted");
+ }
+ 
+ function rejectRequest() {
+     // Add code to handle rejecting the request
+     console.log("Request rejected");
+ }
+ 
+ 
+ 
+ // Function to open the popup
+ function openPopup() {
+     document.getElementById("popup").style.display = "block";
+   }
+   
+   // Function to close the popup
+   function closePopup() {
+     document.getElementById("popup").style.display = "none";
+   }
+ 
+   function Del(id,id2) {
+     var element = document.getElementById(id);
+     if (element) {
+         element.parentNode.removeChild(element);
+         if (id2==='acceptButtonn')
+         alert("accepted successfully");
+     else
+     alert("Rejected successfully");
+ 
+     } else {
+         console.log("Element with ID " + id + " not found.");
+     }
+ }
+ 
+ 
+ 
+ function downloadPDF() {
+     var url = "/Users/hanaamr/Downloads";
+     var xhr = new XMLHttpRequest();
+     xhr.open("GET", url, true);
+     xhr.responseType = "blob";
+     xhr.onload = function() {
+         var blob = xhr.response;
+         var link = document.createElement("a");
+         link.href = window.URL.createObjectURL(blob);
+         link.download = "ca_tut5.pdf";
+         link.click();
+     };
+     xhr.send();
+ }
+ 
+ function greetUser() {
+     alert("Hello! Welcome to our website.");
+ }
+ 
+ function downloadFile() {
+     var anchor = document.createElement('a');
+     anchor.href = 'https://github.com/adobe/pdfjs-dist/raw/master/examples/learning/helloworld.pdf';
+     anchor.download = 'helloworld.pdf';
+     anchor.click();
+ }
+ function downloadLocalFile() {
+     // var anchor = document.createElement('a');
+     // anchor.href = 'file:///Users/hanaamr/Downloads/Charities_How_important_is_performance_to_donors.pdf'; // Replace with the path to your local file
+     // anchor.download = 'NETWORKS'; // Specify the filename for the downloaded file
+     // anchor.click();/
+     alert("File Downloaded Successfully");
+ }
+ function goBack() {
+     window.history.back();
+ }
+ 
+ function goHome() {
+     redirectToPage('Home.html'); 
+ }
+ function change(){
+     redirectToPage('change_pass.html')
+ 
+ }
+ function Login(){
+     redirectToPage('Login.html')
+ }
+ function log2() {
+     var name = document.getElementById('name').value;
+     var pass = document.getElementById('password').value;
+     
+     if (name === "hana" && pass === "hana") {
+ 
+         alert('correct username or password');
+         redirectToPage('team.html');
+         
+        
+     } 
+     else
+     if(name==="sarah" && pass === "sarah"){
+         alert('correct username or password');
+         redirectToPage('donorhome.html');
+         
+ 
+     }
+ 
+     else
+     if(name==="menna" && pass === "menna"){
+         redirectToPage('organization.html');
+ 
+ 
+ 
+     }
+     else {
+         alert('Invalid username or password');
+         return false; 
+     }
+ }
+ function Oreg(){
+ 
+     edirectToPage( 'register.html');
+ }
+ 
+ 
+ function Dreg(){
+ 
+ 
+     redirectToPage( 'registrationform.html');
+ }
