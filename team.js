@@ -89,13 +89,6 @@
         }
     }
 
-    function goBack() {
-        window.history.back();
-    }
-
-    function goHome() {
-        redirectToPage('Organization.html'); 
-    }
 
 
 
