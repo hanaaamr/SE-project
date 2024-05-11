@@ -8,7 +8,4 @@ function orgHome(){
     redirectToPage('organization.html');
 
 }
-function redirectToPage(pageUrl) {
-    window.location.href = pageUrl;
-}
 

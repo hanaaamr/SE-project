@@ -138,8 +138,15 @@
                         <label for="itemDescription" class="form-label">Item Description:</label>
                         <textarea class="form-control" id="itemDescription" name="itemDescription" rows="3" placeholder="Enter item description"></textarea>
                     </div>
-                    <button class="btn btn-primary" onclick="submitted()" >Submit</button>
-                    <script src="createpost.js"></script>
+                    <button class="btn btn-primary" onclick="submitted()"onclick= "orgHome()">Submit</button>
+                    <script src="createpost.js">
+
+function orgHome(){
+    redirectToPage('organization.html');
+
+}
+
+                    </script>
                 </form>
             </div>
         </div>
