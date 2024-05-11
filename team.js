@@ -173,7 +173,7 @@ redirectToPage('testimonial.html');
 function View2() {
  // alert("Access button clicked!");
  // window.location.href = "/Users/hanaamr/Desktop/free-nonprofit-website-template/testimonial.html";
- redirectToPage('testimonial.html');
+ redirectToPage('contacting.html');
   // Add your custom functionality here
 }
 
