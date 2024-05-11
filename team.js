@@ -336,7 +336,7 @@ function accessDetails() {
  }
  function Oreg(){
  
-     edirectToPage( 'register.html');
+     redirectToPage( 'register.html');
  }
  
  
@@ -352,7 +352,7 @@ function accessDetails() {
 
 
 
-function submitDonation2() {
+ function submitDonation2() {
     // Display a confirmation message
     alert("Donation pickup is done successfully");
 }
@@ -392,7 +392,7 @@ function calculateETA() {
         const now = new Date();
         const etaTime = new Date(now.getTime() + etaMinutes * 60000);
         const etaString = etaTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
-        etaDisplay.textContent = Estimated Time of Arrival (ETA): ${etaString};
+        etaDisplay.textContent = `Estimated Time of Arrival (ETA): ${etaString}`;
     }
 }
 
@@ -405,21 +405,6 @@ function submitDonation() {
     // Simulate form submission success
     alert('Donation submitted successfully!');
     return true;
-}
-function redirectToPage(pageUrl) {
-    window.location.href = pageUrl;
-}
-
-function FoodBankD() {
-    redirectToPage('foodbank.html');
-}
-
-function AhlMasrD() {
-    redirectToPage('ahlmasr.html'); 
-}
-
-function BedayaD() {
-    redirectToPage('bedaya.html'); 
 }
 function searchRegOrganizations() {
     var category = document.getElementById("categoryFilter").value.toLowerCase();
