@@ -92,7 +92,7 @@ function Del(id) {
 
 
 
-function searchRegOrganizations() {
+function searchRegOrganizationsss() {
 var category = document.getElementById("categoryFilter").value.toLowerCase();
 var searchInput = document.getElementById("searchInput").value.toLowerCase();
 
