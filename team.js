@@ -407,7 +407,6 @@ if (!pickupTime) {
 }
 // Simulate form submission success
 alert('Donation submitted successfully!');
-redirectToPage("donorhome")
 return true;
 }
 // function searchRegOrganizations() {
@@ -417,6 +416,8 @@ return true;
 function submitDonation() {
 // Display a confirmation message
 alert("Donation Application is sent successfully! \nYour donation application is currently pending.");
+redirectToPage("donorhome")
+
 }
 function deleteacc() {
 var result = confirm("Are you sure you want to delete your account?");
