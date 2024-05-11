@@ -399,7 +399,7 @@ function orgHome(){
     redirectToPage('organization.html');
 
 }
-function submitDonation2() {
+function submitDonation() {
 const pickupTime = document.querySelector('input[name="pickupTime"]:checked');
 if (!pickupTime) {
     alert('Please select a pickup time slot before submitting.');
