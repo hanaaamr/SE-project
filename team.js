@@ -92,7 +92,7 @@ function Del(id) {
 
 
 
-function searchRegOrganizationsss() {
+function searchRegOrganizations() {
 var category = document.getElementById("categoryFilter").value.toLowerCase();
 var searchInput = document.getElementById("searchInput").value.toLowerCase();
 
@@ -406,10 +406,10 @@ if (!pickupTime) {
 alert('Donation submitted successfully!');
 return true;
 }
-function searchRegOrganizations() {
-var category = document.getElementById("categoryFilter").value.toLowerCase();
-var searchInput = document.getElementById("searchInput").value.toLowerCase();
-}
+// function searchRegOrganizations() {
+// var category = document.getElementById("categoryFilter").value.toLowerCase();
+// var searchInput = document.getElementById("searchInput").value.toLowerCase();
+// }
 function submitDonation() {
 // Display a confirmation message
 alert("Donation Application is sent successfully! \nYour donation application is currently pending.");
