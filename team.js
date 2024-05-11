@@ -407,6 +407,7 @@ if (!pickupTime) {
 }
 // Simulate form submission success
 alert('Donation submitted successfully!');
+redirectToPage("donorhome")
 return true;
 }
 // function searchRegOrganizations() {
