@@ -118,7 +118,7 @@
     </div>
 
     <div class="container text-center">
-        <button id="submitButton" type="submit" class="btn btn-outline-primary py-2 px-5" onclick="showConfirmation()" onclick="orgHome()">Submit
+        <button id="submitButton" type="submit" class="btn btn-outline-primary py-2 px-5" onclick="showConfirmation()" >Submit
             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                 <i class="fa fa-arrow-right"></i>
             </div>
@@ -146,6 +146,11 @@
     
     // If a radio button is selected, show the confirmation message
     alert("Selection for drop-off is done successfully!");
+    orgHome();
+}
+function orgHome(){
+    redirectToPage('organization.html');
+
 }
     </script>
     <!-- Donation Details End -->
