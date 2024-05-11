@@ -92,7 +92,7 @@ function Del(id) {
 
 
 
-function searchRegOrganizationsss() {
+function searchRegOrganizations() {
 var category = document.getElementById("categoryFilter").value.toLowerCase();
 var searchInput = document.getElementById("searchInput").value.toLowerCase();
 
@@ -173,7 +173,7 @@ redirectToPage('testimonial.html');
 function View2() {
  // alert("Access button clicked!");
  // window.location.href = "/Users/hanaamr/Desktop/free-nonprofit-website-template/testimonial.html";
- redirectToPage('contacting.html');
+ redirectToPage('testimonial.html');
   // Add your custom functionality here
 }
 
