@@ -416,7 +416,7 @@ return true;
 function submitDonation() {
 // Display a confirmation message
 alert("Donation Application is sent successfully! \nYour donation application is currently pending.");
-redirectToPage("donorhome")
+redirectToPage("donorhome.html")
 
 }
 function deleteacc() {
