@@ -89,6 +89,13 @@
         }
     }
 
+    function goBack() {
+        window.history.back();
+    }
+
+    function goHome() {
+        redirectToPage('Organization.html'); 
+    }
 
 
 
@@ -201,7 +208,9 @@ function accessDetails() {
    
  
  //  }
- 
+  function redirectToPage(pageUrl) {
+     window.location.href = pageUrl;
+ }
  
  function viewpendingD() {
      redirectToPage('pendingd.html');
@@ -345,130 +354,3 @@ function accessDetails() {
  
      redirectToPage( 'registrationform.html');
  }
-
-
-
-
-
-
-
-function submitDonation2() {
-    // Display a confirmation message
-    alert("Donation pickup is done successfully");
-}
-function submitDonation3() {
-    // Display a confirmation message
-    alert("Donation Drop-off is done successfully");
-}
-function updatemessage() {
-    // Display a confirmation message
-    alert("updating the profile is done successfully");
-}
-function alerttt() {
-    // Display a confirmation message
-    console.log("Button clicked!");
-    alert("Your infomation has been updated successfully");
-}
-function calculateETA() {
-    const pickupTime = document.querySelector('input[name="pickupTime"]:checked');
-    if (pickupTime) {
-        const etaDisplay = document.getElementById('eta');
-        let etaMinutes;
-
-        switch (pickupTime.value) {
-            case 'morning':
-                etaMinutes = 30;
-                break;
-            case 'afternoon':
-                etaMinutes = 45;
-                break;
-            case 'evening':
-                etaMinutes = 60;
-                break;
-            default:
-                etaMinutes = 0;
-        }
-
-        const now = new Date();
-        const etaTime = new Date(now.getTime() + etaMinutes * 60000);
-        const etaString = etaTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
-        etaDisplay.textContent = Estimated Time of Arrival (ETA): ${etaString};
-    }
-}
-
-function submitDonation() {
-    const pickupTime = document.querySelector('input[name="pickupTime"]:checked');
-    if (!pickupTime) {
-        alert('Please select a pickup time slot before submitting.');
-        return false;
-    }
-    // Simulate form submission success
-    alert('Donation submitted successfully!');
-    return true;
-}
-function redirectToPage(pageUrl) {
-    window.location.href = pageUrl;
-}
-
-function FoodBankD() {
-    redirectToPage('foodbank.html');
-}
-
-function AhlMasrD() {
-    redirectToPage('ahlmasr.html'); 
-}
-
-function BedayaD() {
-    redirectToPage('bedaya.html'); 
-}
-function searchRegOrganizations() {
-    var category = document.getElementById("categoryFilter").value.toLowerCase();
-    var searchInput = document.getElementById("searchInput").value.toLowerCase();
-}
-function submitDonation() {
-    // Display a confirmation message
-    alert("Donation Application is sent successfully! \nYour donation application is currently pending.");
-}
-function deleteacc() {
-    var result = confirm("Are you sure you want to delete your account?");
-    if (result) {
-        window.location.href = "registrationform.html";
-    } else {
-        alert("Action canceled. Your account was not deleted.");
-    }
-}
-//SEARCH AND FILTER
-document.addEventListener("DOMContentLoaded", function() {
-    const categoryFilter = document.getElementById('categoryFilter');
-    const searchInput = document.getElementById('searchInput');
-    const rows = document.querySelectorAll('table tbody tr');
-
-    // Event listener for category filter
-    categoryFilter.addEventListener('change', function() {
-        const selectedCategory = categoryFilter.value.toLowerCase();
-        const searchTerm = searchInput.value.trim().toLowerCase();
-        filterTable(selectedCategory, searchTerm);
-    });
-
-    // Event listener for search input
-    searchInput.addEventListener('input', function() {
-        const selectedCategory = categoryFilter.value.toLowerCase();
-        const searchTerm = searchInput.value.trim().toLowerCase();
-        filterTable(selectedCategory, searchTerm);
-    });
-
-    // Function to filter table rows by category and search term
-    function filterTable(category, searchTerm) {
-        rows.forEach(row => {
-            const categoryCell = row.querySelector('td:nth-child(4)');
-            const categoryText = categoryCell.textContent.trim().toLowerCase();
-            const firstNameCell = row.querySelector('td:nth-child(2)');
-            const firstNameText = firstNameCell.textContent.trim().toLowerCase();
-            if ((category === '' || categoryText === category) && (searchTerm === '' || firstNameText.includes(searchTerm))) {
-                row.style.display = '';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    }
-});
