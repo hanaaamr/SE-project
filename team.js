@@ -241,7 +241,7 @@ function closePopup() {
  document.getElementById("popup").style.display = "none";
 }
 
-function Del(id,id2) {
+function Del2(id,id2) {
  var element = document.getElementById(id);
  if (element) {
      element.parentNode.removeChild(element);
