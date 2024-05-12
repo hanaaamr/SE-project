@@ -629,10 +629,9 @@ function filterByAge(age) {
         // Check if the area matches the selected area or if it's 'all'
         if (areaText === area.toLowerCase() || area.toLowerCase() === 'all') {
             // If matched, show the parent element
-            element.style.display = 'block';
-        } else {
+            element.closest('.col-lg-4').style.display = 'block';        } else {
             // If not matched, hide the parent element
-            element.style.display = 'none';
+            element.closest('.col-lg-4').style.display = 'none';
         }
     });
 }
