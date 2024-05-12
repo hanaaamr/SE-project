@@ -130,7 +130,7 @@
                       <!-- Submit Button -->
                       <br>
                       <div class="d-flex justify-content-center">
-                      <a class="btn btn-outline-primary px-3" href="Login.html" onclick="validateAndSubmit()">
+                      <a class="btn btn-outline-primary px-3"  onclick="validateAndSubmit()">
                           Submit
                           <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                               <i class="fa fa-arrow-right"></i>
@@ -226,12 +226,14 @@
 
         if (!subjects || !classes || !students || !verificationDocument) {
             alert('Please fill in all required fields.');
+            redirectTo("Login.html");
             return false; // Prevent form submission
         }
-
+else{
         // If all fields are filled, redirect to donorhome.html
         window.location.href = 'donorhome.html';
         return true; // Allow form submission
+    }
     }
     </script>
 
