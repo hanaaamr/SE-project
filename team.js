@@ -659,17 +659,17 @@ function filterBySeason(season) {
 
 function filterByArea(area) {
     // Get all the elements with the class 'team-item'
-    var elements = document.querySelectorAll('.team-item');
+    var elements = document.querySelectorAll('.col-lg-3');
 
     // Loop through each element
     elements.forEach(function(element) {
         // Check if the data-area attribute of the element matches the selected area or if it's 'all'
         if (element.dataset.area === area || area === 'all') {
             // If matched, show the element
-            element.closest('.team-item').style.display = 'block';
+            element.closest('.col-lg-3').style.display = 'block';
         } else {
             // If not matched, hide the element
-            element.closest('.team-item').style.display = 'none';
+            element.closest('.col-lg-3').style.display = 'none';
         }
     });
 }
