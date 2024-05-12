@@ -1,11 +1,9 @@
 function submitted() {
     alert('Your Post is Submitted!');
-    orgHome();
-    
+    window.location.href = 'organization.html';
 
-}
-function orgHome(){
-    redirectToPage('organization.html');
+    // orgHome();
+    
 
 }
 
