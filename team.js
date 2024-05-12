@@ -481,15 +481,15 @@ function roleeeee(){
 }
 
 function goHome2() {
-    if(name2==="karin"){
+    if(log22==="karin"){
     redirectToPage('donorhome2.html');
     }
-    if(name2==="ma"){
+    if(log22==="ma"){
         redirectToPage('donorhome1.html');
 
 
     }
-    if(name2==="sarah"){
+    if(log22==="sarah"){
         redirectToPage('donorhome2.html');
 
 
