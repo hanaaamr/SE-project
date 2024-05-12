@@ -166,19 +166,112 @@
 
  
 
+
+
+
+
+
+
+<style>
+    table {
+        width: 100%;
+        table-layout: fixed; /* Ensure fixed table layout */
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        width: 100px;
+        word-wrap: break-word; /* Allow long words to wrap */
+    }
+
+    tr {
+        height: 50px; /* Set fixed height for rows */
+    }
+
+    tbody tr {
+        height: auto; /* Reset height for table body rows */
+    }
+</style>
+<table>
+    <thead>
+        <tr class="service-item" data-age="all">                <th>Request ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Clothing Items</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Season</th>
+            <th>Date</th>
+            <th>Included Items</th>
+            <th>Donate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Table Rows -->
+       
+ <tr class="service-item" data-area="aja">    <td>1</td>
+<td>John</td>
+<td>Doe</td>
+<td>Clothes</td>
+<td>Adult</td>    
+<td>Male</td>
+<td>Spring</td>
+<td>2024-04-30</td>
+<td>T-shirts</td>
+<td>
+    <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+        View Details
+        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+            <i class="fa fa-arrow-right"></i>
+        </div>
+    </a>
+</td>
+</tr>
+<tr class="service-item" data-area="aja">
+<td>2</td>
+<td>Jane</td>
+<td>Smith</td>
+<td>Clothes</td>
+<td>Child</td>
+<td>Female</td>
+<td>Winter</td>
+<td>2024-04-29</td>
+<td>Sweaters</td>
+<td>
+    <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+        View Details
+        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+            <i class="fa fa-arrow-right"></i>
+        </div>
+    </a>
+</td>
+</tr>
+<tr class="service-item" data-area="new">    <td>3</td>
+<td>Michael</td>
+<td>Johnson</td>
+<td>Clothes</td>
+<td>Teen</td>
+<td>Male</td>
+<td>Summer</td>
+<td>2024-04-28</td>
+<td>Shorts</td>
+<td>
+    <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+        View Details
+        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+            <i class="fa fa-arrow-right"></i>
+        </div>
+    </a>
+</td>
+</tr>
+
+
+</td>
+</tr>
+
     <!-- Team Start -->
-    <tr class="service-item" data-area="new">
-        <td>1</td>
-        <td>John</td>
-        <td>Doe</td>
-        <td>T-shirts</td>
-        <td>Adult</td>    
-        <td>Male</td>
-        <td>Spring</td>
-        <td>2024-04-30</td>
-        <td>T-shirts</td>
-        <td>Donate button</td>
-    </tr>
+<!--   
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;" ></div>
@@ -224,7 +317,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
                 <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" id="bed" data-wow-delay="0.5s" data-area="nott">
                     <div class="team-item position-relative rounded overflow-hidden">
