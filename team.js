@@ -539,12 +539,15 @@ function general0() {
         if (text.includes(input)) {
             // If found, show the parent element
             element.closest('.col-lg-4').style.display = 'block';
-        // } else {
-        //     // If not found, hide the parent element
-        //     // element.closest('.col-lg-4').style.display = 'none';
-        // }
-        if (!found) {
+        } else {
+            // If not found, hide the parent element
+            element.closest('.col-lg-4').style.display = 'none';
             alert("Not found");
+
         }
+
+        // if (!found) {
+        //     alert("Not found");
+        // }
     });
 }
