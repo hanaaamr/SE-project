@@ -307,8 +307,8 @@ function Login(){
  redirectToPage('Login.html')
 }
 function log2() {
-  log22 = document.getElementById('name').value;
-  pass = document.getElementById('password').value;
+    global.log22 = document.getElementById('name').value;
+  global.pass = document.getElementById('password').value;
  
  if (log22 === "hana" && pass === "hana") {
 
