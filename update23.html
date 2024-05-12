@@ -142,7 +142,7 @@
 
    
 
-    <!-- Main Content -->
+
 <div class="container mt-5 pt-4">
     <h2 class="mb-4">Update Donation Posts</h2>
     <!-- Table to display donation post details -->
@@ -151,9 +151,10 @@
             <thead>
                 <tr>
                     <th scope="col">Donation Post Number</th>
-                    <th scope="col">Donor</th>
-                    <th scope="col">Donation Details</th>
-                    <th scope="col">Contribution</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Item Description</th>
+                    <th scope="col">Item Category</th>
+                    <th scope="col">Item Quantity</th>
                     <th scope="col">Donation Fulfillment</th>
                 </tr>
             </thead>
@@ -161,13 +162,25 @@
                 <!-- Sample data, replace it with dynamic data from your backend -->
                 <tr>
                     <td>20</td>
-                    <td><input type="text" value="Menna Hatem" /></td>
+                    <td><input type="text" value="Blood" /></td>
                     <td><textarea>Blood Type B+</textarea></td>
-                    <td><input type="text" value="Donation" /></td>
                     <td>
                         <select>
-                            <option value="Fulfilled" selected>Fulfilled</option>
-                            <option value="Pending">Pending</option>
+                            <option value="Pending" >Toys</option>
+                            <option value="Fulfilled">Clothes</option>
+                            <option value="Canceled" selected>Blood Donations</option>
+                            <option value="Canceled" >Medical Supplies</option>
+                            <option value="Canceled">School Supplies</option>
+                            <option value="Canceled">Doctor Visits</option>
+                            <option value="Canceled">Teaching Classes</option>
+                            <option value="Canceled">Food</option>
+                        </select>
+                    </td>
+                    <td><input type="number" value="1" min="1" /></td>
+                    <td>
+                        <select>
+                            <option value="Fulfilled" >Fulfilled</option>
+                            <option value="Pending" selected>Pending</option>
                             <option value="Canceled">Canceled</option>
                         </select>
                     </td>
@@ -269,6 +282,7 @@
         </div>
     </div>
 </div>
+
 <!-- Footer End -->
 
 

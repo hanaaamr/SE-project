@@ -152,8 +152,10 @@
                 <tr>
                     <th scope="col">Donation Post Number</th>
                     <th scope="col">Donor</th>
-                    <th scope="col">Donation Details</th>
-                    <th scope="col">Contribution</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Item Description</th>
+                    <th scope="col">Item Category</th>
+                    <th scope="col">Item Quantity</th>
                     <th scope="col">Donation Fulfillment</th>
                 </tr>
             </thead>
@@ -162,8 +164,21 @@
                 <tr>
                     <td>20</td>
                     <td><input type="text" value="Menna Hatem" /></td>
+                    <td><input type="text" value="Sweatpants" /></td>
                     <td><textarea>Sweatpants&#10;Size:Small&#10;Material:Cotton</textarea></td>
-                    <td><input type="text" value="Donation" /></td>
+                    <td>
+                        <select>
+                            <option value="Fulfilled" selected>Clothes</option>
+                            <option value="Pending">Toys</option>
+                            <option value="Canceled">Blood Donations</option>
+                            <option value="Canceled">Medical Supplies</option>
+                            <option value="Canceled">School Supplies</option>
+                            <option value="Canceled">Doctor Visits</option>
+                            <option value="Canceled">Teaching Classes</option>
+                            <option value="Canceled">Food</option>
+                        </select>
+                    </td>
+                    <td><input type="number" value="1" min="1" /></td>
                     <td>
                         <select>
                             <option value="Fulfilled" selected>Fulfilled</option>
