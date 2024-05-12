@@ -5,7 +5,7 @@ var organizations = [
     { name: "Bedaya" }
 ];
 
-var name2 = "";
+ var log22 = "";
  var pass = "";
  
 // function searchRegOrganizations() {
@@ -307,10 +307,10 @@ function Login(){
  redirectToPage('Login.html')
 }
 function log2() {
-  name2 = document.getElementById('name').value;
+  log22 = document.getElementById('name').value;
   pass = document.getElementById('password').value;
  
- if (name2 === "hana" && pass === "hana") {
+ if (log22 === "hana" && pass === "hana") {
 
      alert('correct username or password');
      redirectToPage('team.html');
@@ -318,27 +318,27 @@ function log2() {
     
  } 
  else
- if(nam2==="sarah" && pass === "sarah"){
+ if(log22==="sarah" && pass === "sarah"){
      alert('correct username or password');
      redirectToPage('donorhome1.html');
      
 
  }
  else 
- if(name2==="ma" && pass === "ma"){
+ if(log22==="ma" && pass === "ma"){
     redirectToPage('donorhome.html');
 
  }
 
  else
- if(name2==="menna" && pass === "menna"){
+ if(log22==="menna" && pass === "menna"){
      redirectToPage('organization.html');
 
 
 
  }
  else 
- if(name2==="karin" && pass === "karin"){
+ if(log22==="karin" && pass === "karin"){
     redirectToPage('donorhome2.html')
 
  }
