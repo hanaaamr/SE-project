@@ -500,9 +500,8 @@ else{
 }
 
 }
-
 function general0() {
-    var searchInput = document.getElementById("searchInput").value.toLowerCase();
+    var searchInput = document.getElementById("searchInput").value.toLowerCase().trim();
 
     var teams = document.querySelectorAll(".team-item");
     var found = false; // Flag to check if any item is found
