@@ -95,66 +95,66 @@ function Del(id) {
 
 
 
-function searchRegOrganizations() {
-var category = document.getElementById("categoryFilter").value.toLowerCase();
-var searchInput = document.getElementById("searchInput").value.toLowerCase();
+// function searchRegOrganizations() {
+// var category = document.getElementById("categoryFilter").value.toLowerCase();
+// var searchInput = document.getElementById("searchInput").value.toLowerCase();
 
-var teams = document.querySelectorAll(".team-item");
-var found = false; // Flag to check if any item is found
+// var teams = document.querySelectorAll(".team-item");
+// var found = false; // Flag to check if any item is found
 
 
-teams.forEach(function(team) {
-    var teamName = team.querySelector("h5").textContent.toLowerCase();
-    var categoryId = team.id.toLowerCase();
+// teams.forEach(function(team) {
+//     var teamName = team.querySelector("h5").textContent.toLowerCase();
+//     var categoryId = team.id.toLowerCase();
 
-    switch (category) {
-        case "governorate":
-            if (searchInput === "cairo" && (teamName.includes("bedaya") || teamName.includes("ahl masr") || teamName.includes("food bank")) ){
-                team.style.display = "block";
-                found = true;
-            } else {
-                team.style.display = "none";
-            }
-            break;
-        case "organization type":
-            if (searchInput === "burn" && teamName.includes("ahl masr")) {
-                team.style.display = "block";
-                found = true;
-            } else if (searchInput === "health" && teamName.includes("bedaya")) {
-                team.style.display = "block";
-                found = true;
-            } else if ((searchInput === "hunger" || searchInput === "food") && teamName.includes("food bank")) {
-                team.style.display = "block";
-                found = true;
-            } else {
-                team.style.display = "none";
-            }
-            break;
-        case "area":
-            if (searchInput === "giza" && teamName.includes("bedaya")) {
-                team.style.display = "block";
-                found = true;
-            } else if (searchInput === "new cairo" && (teamName.includes("food bank") || teamName.includes("ahl masr"))) {
-                team.style.display = "block";
-                found = true;
-            } else {
-                team.style.display = "none";
-            }
-            break;
-        default:
-            if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
-                team.style.display = "block";
-                found = true;
-            } else {
-                team.style.display = "none";
-            }
-    }
-});
+//     switch (category) {
+//         case "governorate":
+//             if (searchInput === "cairo" && (teamName.includes("bedaya") || teamName.includes("ahl masr") || teamName.includes("food bank")) ){
+//                 team.style.display = "block";
+//                 found = true;
+//             } else {
+//                 team.style.display = "none";
+//             }
+//             break;
+//         case "organization type":
+//             if (searchInput === "burn" && teamName.includes("ahl masr")) {
+//                 team.style.display = "block";
+//                 found = true;
+//             } else if (searchInput === "health" && teamName.includes("bedaya")) {
+//                 team.style.display = "block";
+//                 found = true;
+//             } else if ((searchInput === "hunger" || searchInput === "food") && teamName.includes("food bank")) {
+//                 team.style.display = "block";
+//                 found = true;
+//             } else {
+//                 team.style.display = "none";
+//             }
+//             break;
+//         case "area":
+//             if (searchInput === "giza" && teamName.includes("bedaya")) {
+//                 team.style.display = "block";
+//                 found = true;
+//             } else if (searchInput === "new cairo" && (teamName.includes("food bank") || teamName.includes("ahl masr"))) {
+//                 team.style.display = "block";
+//                 found = true;
+//             } else {
+//                 team.style.display = "none";
+//             }
+//             break;
+//         default:
+//             if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
+//                 team.style.display = "block";
+//                 found = true;
+//             } else {
+//                 team.style.display = "none";
+//             }
+//     }
+// });
 
-if (!found) {
-    alert("Not found");
-}
-}
+// if (!found) {
+//     alert("Not found");
+// }
+// }
 
 
 
