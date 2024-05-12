@@ -598,3 +598,21 @@ function general0() {
         alert('No matching result found.');
     }
 }
+function filterByAge(age) {
+    // Get all the elements where we will search for age
+    var elements = document.querySelectorAll('.service-item');
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        var ageText = element.dataset.age.toLowerCase();
+
+        // Check if the age matches the selected age or if it's 'all'
+        if (ageText === age.toLowerCase() || age.toLowerCase() === 'all') {
+            // If matched, show the parent element
+            element.style.display = 'block';
+        } else {
+            // If not matched, hide the parent element
+            element.style.display = 'none';
+        }
+    });
+}

@@ -121,10 +121,16 @@
         <div class="row">
             <div class="col-md-4">
                 <select id="ageFilter" class="form-select">
-                    <option value="">All Ages</option>
+                    <!-- <option value="">All Ages</option>
                     <option value="Child">Child</option>
                     <option value="Teen">Teen</option>
-                    <option value="Adult">Adult</option>
+                    <option value="Adult">Adult</option> -->
+                    <select onchange="filterByAge(this.value)">
+                        <option value="all">All</option>
+                        <option value="adult">Adult</option>
+                        <option value="child">Child</option>
+                        <!-- Add more options as needed -->
+                    </select>
                 </select>
             </div>
             <div class="col-md-4">
@@ -171,7 +177,7 @@
     <td>John</td>
     <td>Doe</td>
     <td>Clothes</td>
-    <td>Adult</td>
+    <td data-age="adult">Adult</td>
     <td>Male</td>
     <td>Spring</td>
     <td>2024-04-30</td>
