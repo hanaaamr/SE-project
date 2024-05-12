@@ -616,12 +616,15 @@ function filterByAge(age) {
         }
     });
 }function filterByArea(area) {
+    console.log("Selected area:", area);
+
     // Get all the elements where we will search for area
     var elements = document.querySelectorAll('.team-text');
 
     // Loop through each element
     elements.forEach(function(element) {
         var areaText = element.dataset.area.toLowerCase();
+        console.log("Element area:", areaText);
 
         // Check if the area matches the selected area or if it's 'all'
         if (areaText === area.toLowerCase() || area.toLowerCase() === 'all') {
