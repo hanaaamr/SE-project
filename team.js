@@ -467,7 +467,7 @@ function roleeeee(){
     redirectToPage('role.html');
 }
 
-function goHome2() {
-    redirectToPage('donorhome.html');
+// function goHome2() {
+//     redirectToPage('donorhome.html');
 
-}
+// }
