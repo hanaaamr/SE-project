@@ -616,3 +616,22 @@ function filterByAge(age) {
         }
     });
 }
+
+    function filterByArea(area) {
+        // Get all the elements representing different areas
+        var areaItems = document.querySelectorAll('.area-item');
+
+        // Loop through each area item
+        areaItems.forEach(function(areaItem) {
+            var itemArea = areaItem.dataset.area;
+
+            // Check if the area matches the selected area or if it's 'all'
+            if (itemArea === area || area === 'all') {
+                // If matched or 'all', show the area item
+                areaItem.style.display = 'block';
+            } else {
+                // If not matched, hide the area item
+                areaItem.style.display = 'none';
+            }
+        });
+    }
