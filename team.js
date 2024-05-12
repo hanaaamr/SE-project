@@ -682,10 +682,10 @@ function filterByGovernorate(governorate) {
         // Check if the data-governorate attribute of the element matches the selected governorate or if it's 'all'
         if (element.dataset.governorate === governorate || governorate === 'all') {
             // If matched, show the element
-            element.style.display = 'block';
+            element.closest('.col-lg-3').style.display = 'block';
         } else {
             // If not matched, hide the element
-            element.style.display = 'none';
+            element.closest('.col-lg-3').style.display = 'none';
         }
     });
 }
