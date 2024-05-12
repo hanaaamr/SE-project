@@ -133,16 +133,16 @@
                 <br> <br> <br> <br>
                 
                 <div class="col-md-4">
-                    <select id="areaFilter" class="form-select" onchange="filterByAge(this.value)">
-                        <option value="adult">All Areas</option>
-                        <option value="child">New Cairo</option>
-                        <option value="teen">Giza</option>
+                    <select id="areaFilter" class="form-select" onchange="filterByArea(this.value)">
+                        <option value="all">All Areas</option>
+                        <option value="new">New Cairo</option>
+                        <option value="Giza">Giza</option>
                         <!-- Add more options as needed -->
                     </select>
                 </div>
                 
                 <div class="col-md-4">
-                    <select id="organizationTypeFilter" class="form-select">
+                    <select id="organizationTypeFilter" class="form-select" onchange="filterByType(this.value)">
                         <option value="">Organization Type</option>
                         <option value="Health">Health</option>
                         <option value="Food">Food</option>
@@ -150,7 +150,7 @@
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <select id="governorateFilter" class="form-select">
+                    <select id="governorateFilter" class="form-select"   onchange=" filterByGovernorate(this.value)">
                         <option value="">Governorate</option>
                         <option value="Cairo">Cairo</option>
                     </select>
@@ -165,12 +165,6 @@
 
 
  
-
-
-
-
-
-
     <!-- Team Start -->
   
     <div class="container-xxl py-5">
@@ -178,7 +172,7 @@
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;" ></div>
             <div class="row justify-content-center align-items-center">
               
-<div class="col-lg-3 col-md-6 wow fadeInUp" id="food"   data-age="teen" data-wow-delay="0.1s" >
+<div class="col-lg-3 col-md-6 wow fadeInUp" id="food" data-wow-delay="0.1s" data-area="new"  data-type="food" data-governarate="cairo"></div>>
     <div class="team-item position-relative rounded overflow-hidden">
         <div class="overflow-hidden">
             <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/1.jpg" alt="">
@@ -195,7 +189,7 @@
     </div>
 </div>
 
-<div class="col-lg-3 col-md-6 wow fadeInUp" data-age="child" id="ahl" data-wow-delay="0.3s" >
+<div class="col-lg-3 col-md-6 wow fadeInUp" id="ahl" data-wow-delay="0.3s" data-area="Giza" data-type="Burn" data-governarate="cairo">
     <div class="team-item position-relative rounded overflow-hidden">
         <div class="overflow-hidden">
             <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/2.jpg" alt="">
@@ -211,8 +205,7 @@
         </div>
     </div>
 </div>
-
-                 <div class="col-lg-3 col-md-6 wow fadeInUp" id="bed" data-wow-delay="0.5s" data-age="adult">
+ <div class="col-lg-3 col-md-6 wow fadeInUp" id="bed" data-wow-delay="0.5s" data-area="new"  data-type="health" data-governarate="cairo"></div>>
                     <div class="team-item position-relative rounded overflow-hidden">
                         <div class="overflow-hidden">
                             <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/3.jpg" alt="">
@@ -224,7 +217,7 @@
                                     <i>View</i>
                                 </a>                               
                             </div>
-                        
+                            
                         </div>
                     </div>
                 </div> 

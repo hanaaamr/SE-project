@@ -673,3 +673,36 @@ function filterByArea(area) {
         }
     });
 }
+function filterByGovernorate(governorate) {
+    // Get all the elements with the class 'col-lg-3'
+    var elements = document.querySelectorAll('.col-lg-3');
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        // Check if the data-governorate attribute of the element matches the selected governorate or if it's 'all'
+        if (element.dataset.governorate === governorate || governorate === 'all') {
+            // If matched, show the element
+            element.style.display = 'block';
+        } else {
+            // If not matched, hide the element
+            element.style.display = 'none';
+        }
+    });
+}
+
+function filterByType(type) {
+    // Get all the elements with the class 'col-lg-3'
+    var elements = document.querySelectorAll('.col-lg-3');
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        // Check if the data-type attribute of the element matches the selected type or if it's 'all'
+        if (element.dataset.type === type || type === 'all') {
+            // If matched, show the element
+            element.style.display = 'block';
+        } else {
+            // If not matched, hide the element
+            element.style.display = 'none';
+        }
+    });
+}
