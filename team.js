@@ -317,8 +317,13 @@ function log2() {
  else
  if(name==="sarah" && pass === "sarah"){
      alert('correct username or password');
-     redirectToPage('donorhome.html');
+     redirectToPage('donorhome1.html');
      
+
+ }
+ else 
+ if(name==="ma" && pass === "ma"){
+    redirectToPage('donorhome.html');
 
  }
 
