@@ -133,7 +133,7 @@
                 <br> <br> <br> <br>
                 
                 <div class="col-md-4">
-                    <select id="areaFilter" class="form-select">
+                    <select id="areaFilter" class="form-select" onchange="filterByAge(this.value)">
                         <option value="">Area</option>
                         <option value="New Cairo">New Cairo</option>
                         <option value="Giza">Giza</option>
@@ -174,7 +174,7 @@
                         <div class="overflow-hidden">
                             <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/1.jpg" alt="">
                         </div>
-                        <div class="team-text bg-light text-center p-4">
+                        <div class="team-text bg-light text-center p-4" data-type="new cairo">
                             <h5>Food Bank</h5>
                             <div class="team-social text-center">
                                 <a class="btn btn-square" href="#" onclick="FoodBankD()">
