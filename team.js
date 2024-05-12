@@ -523,7 +523,7 @@ function general0() {
 }
 
 
-function search() {
+function general0() {
     // Get the input value
     var input = document.getElementById('searchInput').value.toLowerCase();
     
@@ -541,7 +541,8 @@ function search() {
             element.closest('.col-lg-4').style.display = 'block';
         } else {
             // If not found, hide the parent element
-            element.closest('.col-lg-4').style.display = 'none';
+            // element.closest('.col-lg-4').style.display = 'none';
+            alert("Not found");
         }
     });
 }
