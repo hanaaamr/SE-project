@@ -616,23 +616,6 @@ function filterByAge(age) {
         }
     });
 }
-function filterByArea(area) {
-    // Get all the elements with the class 'team-item'
-    var elements = document.querySelectorAll('.team-item');
-
-    // Loop through each element
-    elements.forEach(function(element) {
-        // Check if the data-area attribute of the element matches the selected area or if it's 'all'
-        if (element.dataset.area === area || area === 'all') {
-            // If matched, show the element
-            element.style.display = 'block';
-        } else {
-            // If not matched, hide the element
-            element.style.display = 'none';
-        }
-    });
-}
-
 function filterByGender(gender) {
     // Get all the elements where we will search for gender
     var elements = document.querySelectorAll('.service-item');
@@ -666,6 +649,26 @@ function filterBySeason(season) {
             element.style.display = 'block';
         } else {
             // If not matched, hide the parent element
+            element.style.display = 'none';
+        }
+    });
+}
+
+
+
+
+function filterByArea(area) {
+    // Get all the elements with the class 'team-item'
+    var elements = document.querySelectorAll('.team-item');
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        // Check if the data-area attribute of the element matches the selected area or if it's 'all'
+        if (element.dataset.area === area || area === 'all') {
+            // If matched, show the element
+            element.style.display = 'block';
+        } else {
+            // If not matched, hide the element
             element.style.display = 'none';
         }
     });
