@@ -5,6 +5,9 @@ var organizations = [
     { name: "Bedaya" }
 ];
 
+var name = null;
+ var pass = null;
+ 
 // function searchRegOrganizations() {
     //     var searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
     //     var namesList = document.getElementById('namesList');
@@ -304,8 +307,8 @@ function Login(){
  redirectToPage('Login.html')
 }
 function log2() {
- var name = document.getElementById('name').value;
- var pass = document.getElementById('password').value;
+  name = document.getElementById('name').value;
+  pass = document.getElementById('password').value;
  
  if (name === "hana" && pass === "hana") {
 
@@ -478,6 +481,19 @@ function roleeeee(){
 }
 
 function goHome2() {
-    redirectToPage('donorhome.html');
+    if(name==="karin"){
+    redirectToPage('donorhome2.html');
+    }
+    if(name==="ma"){
+        redirectToPage('donorhome1.html');
+
+
+    }
+    if(name==="sarah"){
+        redirectToPage('donorhome2.html');
+
+
+    }
+
 
 }
