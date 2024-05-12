@@ -541,7 +541,9 @@ function general0() {
             element.closest('.col-lg-4').style.display = 'block';
         } else {
             // If not found, hide the parent element
-            // element.closest('.col-lg-4').style.display = 'none';
+            element.closest('.col-lg-4').style.display = 'none';
+        }
+        if (!found) {
             alert("Not found");
         }
     });
