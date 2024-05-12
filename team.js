@@ -5,7 +5,7 @@ var organizations = [
     { name: "Bedaya" }
 ];
 
-  var log22 = "karin";
+  var log22 = "ma";
  var pass = "";
  
 // function searchRegOrganizations() {
