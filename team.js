@@ -299,6 +299,9 @@ function goBack() {
 function goHome() {
  redirectToPage('Home.html'); 
 }
+function goHome3() {
+    redirectToPage('organization.html'); 
+   }
 function change(){
  redirectToPage('change_pass.html')
 
