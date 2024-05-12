@@ -507,33 +507,56 @@ else{
 
 
 
+// function general0() {
+//     var searchInput = document.getElementById("searchInput").value.toLowerCase();
+
+//     var teamItems = document.querySelectorAll(".team-item");
+    
+//     teamItems.forEach(function(team){
+//         var itemText = item.querySelector("h5").textContent.toLowerCase();
+//         // var categoryId = team.id.toLowerCase();
+
+//                 // if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
+//                 //     team.style.display = "block";
+//                 //     found = true;
+//                 // } else {
+//                 //     team.style.display = "none";
+//                 // }
+//                 if(itemText.includes(searchInput)){
+
+//               itemText.style.display = "block";
+//                     found = true;
+//                 } else {
+//                     itemText.style.display = "none";
+//                 }
+        
+//     });
+
+//     if (!found) {
+//         alert("Not found");
+//     }
+// }
 function general0() {
     var searchInput = document.getElementById("searchInput").value.toLowerCase();
 
     var teamItems = document.querySelectorAll(".team-item");
     
+    var found = false; // Flag to check if any item is found
+
     teamItems.forEach(function(team){
-        var itemText = item.querySelector("h5").textContent.toLowerCase();
-        // var categoryId = team.id.toLowerCase();
+        var itemText = team.querySelector("h5").textContent.toLowerCase();
 
-                // if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
-                //     team.style.display = "block";
-                //     found = true;
-                // } else {
-                //     team.style.display = "none";
-                // }
-                if(itemText.includes(searchInput)){
-
-              itemText.style.display = "block";
-                    found = true;
-                } else {
-                    itemText.style.display = "none";
-                }
-        
+        if (itemText.includes(searchInput)) {
+            team.style.display = "block";
+            found = true;
+        } else {
+            team.style.display = "none";
+        }
     });
 
     if (!found) {
         alert("Not found");
     }
 }
+
 
