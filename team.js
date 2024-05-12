@@ -484,16 +484,19 @@ function goHome2() {
     if(log22==="karin"){
     redirectToPage('donorhome2.html');
     }
-    if(log22==="ma"){
+   else if(log22==="ma"){
         redirectToPage('donorhome1.html');
 
 
     }
-    if(log22==="sarah"){
+   else if(log22==="sarah"){
         redirectToPage('donorhome2.html');
 
 
     }
+else{
 
+    redirectToPage('Home.html');
+}
 
 }
