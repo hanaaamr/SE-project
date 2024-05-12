@@ -685,6 +685,8 @@ function filterByGovernorate(governorate) {
             element.closest('.col-lg-3').style.display = 'block';
       
             // If not matched, hide the element
+            if (element.dataset.area === "No" )
+            element.closest('.col-lg-3').style.display = 'none';
         }
     );
 }
