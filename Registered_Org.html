@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Helping Hands</title>
+    <title>Helping Hands - View Clothing Donation Requests</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -29,6 +29,23 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,318 +56,329 @@
     <!-- Spinner End -->
 
 
-    <!-- Navbar Start -->
-    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="top-bar text-white-50 row gx-0 align-items-center d-none d-lg-flex">
-            <div class="col-lg-6 px-5 text-start">
+   <!-- Navbar Start -->
+   <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="top-bar text-white-50 row gx-0 align-items-center d-none d-lg-flex">
+        <div class="col-lg-6 px-5 text-start">
+            
+        </div>
+        <div class="col-lg-6 px-5 text-end">
+         
+            
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+            <h1 class="fw-bold text-primary m-0">Helping<span class="text-white">Hands</span></h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            
+            <div class="d-none d-lg-flex ms-2">
                 
+                    </div>
+                </a>
             </div>
-            <div class="col-lg-6 px-5 text-end">
-             
-                
+
+            <div class="d-none d-lg-flex ms-2">
+                <a class="btn btn-outline-primary py-2 px-3" href="#" onclick="goHome2()">
+                    HOME
+                    <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                        <i class="fa fa-home"></i>
+                    </div>
+                </a>
+            </div>
+
+            <div class="d-none d-lg-flex ms-2">
+                <a class="btn btn-outline-primary py-2 px-3" href="#" onclick="goBack()">
+                    BACK
+                    <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+                        <i class="fa fa-arrow-left"></i>
+                    </div>
+                </a>
             </div>
         </div>
+    </nav>
+</div>
+<!-- Navbar End -->
 
-        <nav class="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-            <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-                <h1 class="fw-bold text-primary m-0">Helping<span class="text-white">Hands</span></h1>
-            </a>
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                
-                <div class="d-none d-lg-flex ms-2">
-                    
-                        </div>
-                    </a>
-                </div>
 
-                <div class="d-none d-lg-flex ms-2">
-                    <a class="btn btn-outline-primary py-2 px-3" href="#" onclick="goHome()">
-                        HOME
-                        <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                            <i class="fa fa-home"></i>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="d-none d-lg-flex ms-2">
-                    <a class="btn btn-outline-primary py-2 px-3" href="#" onclick="goBack()">
-                        BACK
-                        <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                            <i class="fa fa-arrow-left"></i>
-                        </div>
-                    </a>
-                </div>
-            </div>
+   <!-- Page Header Start -->
+   <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center">
+        <h1 class="display-4 text-white animated slideInDown mb-4">View Clothing Donation Requests
+        <nav aria-label="breadcrumb animated slideInDown">
         </nav>
     </div>
-    <!-- Navbar End -->
-
-
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container text-center">
-            <h1 class="display-4 text-white animated slideInDown mb-4">Registered Organizations</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0">
-
-            </nav>
-        </div>
-    </div>
-    <!-- Page Header End -->
-
-     <!--search bar-->
-     <!-- <div class="container mt-3">
+</div>
+<!-- Page Header End -->
+    
+    <!-- Filter Options -->
+    <div class="container mt-3">
         <div class="row">
-            <div class="col-md-5">
-                <select id="categoryFilter" class="form-select">
-                    <option value="">All Categories</option>
-                    <option value="Area">Area</option>
-                    <option value="Governorate">Governorate</option>
-                    <option value="Organization Type">Organization Type</option>
+            <div class="col-md-4">
+                <select id="ageFilter" class="form-select" onchange="filterByArea(this.value)">
+                    <option value="">All Ages</option>
+                    <option value="new">Child</option>
+                    <option value="giza">Teen</option>
+                    <option value="aja">Adult</option>
+                    <!-- Add more options as needed -->
                 </select>
             </div>
-            <div class="col-md-5">
-                <input type="text" id="searchInput" class="form-control" placeholder="Search by Organization Name">
+            <div class="col-md-4">
+                <select id="genderFilter" class="form-select">
+                    <option value="">All Genders</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
             </div>
-            <div class="col-md-2">
-                <button class="btn btn-primary" onclick="searchRegOrganizations()">Search</button>
-            </div>
-        </div> -->
-        <div class="container mt-3">
-            <div class="row">
-                <div class="row mt-3">
-                    <div class="col-md-10">
-                        <input type="text" id="searchInput" class="form-control" placeholder="Search by Organization Name">
-                    </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-primary" onclick="search1()">Search</button>
-                    </div>
-                </div>
-
-                <br> <br> <br> <br>
-                
-                <div class="col-md-4">
-                    <select id="areaFilter" class="form-select" onchange="filterByArea(this.value)">
-                        <option value="all">All Areas</option>
-                        <option value="new">New Cairo</option>
-                        <option value="aja">All ee</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
-                
-                <div class="col-md-4">
-                    <select id="organizationTypeFilter" class="form-select">
-                        <option value="">Organization Type</option>
-                        <option value="Health">Health</option>
-                        <option value="Food">Food</option>
-                        <option value="Burn">Burn</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <select id="governorateFilter" class="form-select">
-                        <option value="">Governorate</option>
-                        <option value="Cairo">Cairo</option>
-                    </select>
-                </div>
-            </div>
-           
-        </div>
-    </div>
-</div>
-
-
-
-
- 
-
-
-
-
-
-
-
-<style>
-    table {
-        width: 100%;
-        table-layout: fixed; /* Ensure fixed table layout */
-    }
-
-    th, td {
-        padding: 8px;
-        text-align: left;
-        width: 100px;
-        word-wrap: break-word; /* Allow long words to wrap */
-    }
-
-    tr {
-        height: 50px; /* Set fixed height for rows */
-    }
-
-    tbody tr {
-        height: auto; /* Reset height for table body rows */
-    }
-</style>
-<table>
-    <thead>
-        <tr class="service-item" data-age="all">                <th>Request ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Clothing Items</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>Season</th>
-            <th>Date</th>
-            <th>Included Items</th>
-            <th>Donate</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!-- Table Rows -->
-       
- <tr class="service-item" data-area="aja">    <td>1</td>
-<td>John</td>
-<td>Doe</td>
-<td>Clothes</td>
-<td>Adult</td>    
-<td>Male</td>
-<td>Spring</td>
-<td>2024-04-30</td>
-<td>T-shirts</td>
-<td>
-    <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
-        View Details
-        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-            <i class="fa fa-arrow-right"></i>
-        </div>
-    </a>
-</td>
-</tr>
-<tr class="service-item" data-area="aja">
-<td>2</td>
-<td>Jane</td>
-<td>Smith</td>
-<td>Clothes</td>
-<td>Child</td>
-<td>Female</td>
-<td>Winter</td>
-<td>2024-04-29</td>
-<td>Sweaters</td>
-<td>
-    <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
-        View Details
-        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-            <i class="fa fa-arrow-right"></i>
-        </div>
-    </a>
-</td>
-</tr>
-<tr class="service-item" data-area="new">    <td>3</td>
-<td>Michael</td>
-<td>Johnson</td>
-<td>Clothes</td>
-<td>Teen</td>
-<td>Male</td>
-<td>Summer</td>
-<td>2024-04-28</td>
-<td>Shorts</td>
-<td>
-    <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
-        View Details
-        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-            <i class="fa fa-arrow-right"></i>
-        </div>
-    </a>
-</td>
-</tr>
-
-
-</td>
-</tr>
-
-    <!-- Team Start -->
-<!--   
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;" ></div>
-            <div class="row justify-content-center align-items-center">
-              
-<div class="col-lg-3 col-md-6 wow fadeInUp" id="food" data-wow-delay="0.1s" data-area="new" >
-    <div class="team-item position-relative rounded overflow-hidden">
-        <div class="overflow-hidden">
-            <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/1.jpg" alt="">
-        </div>
-        <div class="team-text bg-light text-center p-4 area-item">
-            <h5>Food Bank</h5>
-            <div class="team-social text-center">
-                <a class="btn btn-square" href="#" onclick="FoodBankD()">
-                    <i>View</i>
-                </a>                          
-            </div>
-            <div class="team-social text-center">
-                <a class="btn btn-square" href="#" onclick="Del('food')">
-                    <i>Delete</i>
-                </a>  
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="col-lg-3 col-md-6 wow fadeInUp" id="ahl" data-wow-delay="0.3s" data-area="nott">
-    <div class="team-item position-relative rounded overflow-hidden">
-        <div class="overflow-hidden">
-            <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/2.jpg" alt="">
-        </div>
-        <div class="team-text bg-light text-center p-4 area-item">
-            <h5>Ahl Masr</h5>
-            <div class="team-social text-center">
-                <a class="btn btn-square" href="#" onclick="AhlMasrD()">
-                    <i>View</i>
-                </a>  
-            </div>
-            <div class="team-social text-center">
-                <a class="btn btn-square" href="#" onclick="Del('ahl')">
-                    <i>Delete</i>
-                </a>  
-            </div>
-        </div>
-    </div>
-</div> -->
-
-                <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" id="bed" data-wow-delay="0.5s" data-area="nott">
-                    <div class="team-item position-relative rounded overflow-hidden">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/3.jpg" alt="">
-                        </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>Bedaya</h5>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href="#" onclick="BedayaD()">
-                                    <i>View</i>
-                                </a>                               
-                            </div>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href="#" onclick="Del('bed')">
-                                    <i>Delete</i>
-                                </a>  
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+            <div class="col-md-4">
+                <select id="seasonFilter" class="form-select">
+                    <option value="">All Seasons</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Winter">Winter</option>
+                    <option value="Spring">Spring</option>
+                    <option value="Fall">Fall</option>
+                </select>
             </div>
         </div>
     </div>
 
+    <!-- Table start -->
+    <br>
+    <style>
+        table {
+            width: 100%;
+            table-layout: fixed; /* Ensure fixed table layout */
+        }
     
-    <!-- Team End -->
+        th, td {
+            padding: 8px;
+            text-align: left;
+            width: 100px;
+            word-wrap: break-word; /* Allow long words to wrap */
+        }
+    
+        tr {
+            height: 50px; /* Set fixed height for rows */
+        }
+    
+        tbody tr {
+            height: auto; /* Reset height for table body rows */
+        }
+    </style>
+    <table>
+        <thead>
+            <tr class="service-item" data-age="all">                <th>Request ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Clothing Items</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Season</th>
+                <th>Date</th>
+                <th>Included Items</th>
+                <th>Donate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table Rows -->
+           
+     <tr class="service-item" data-area="new">    <td>1</td>
+    <td>John</td>
+    <td>Doe</td>
+    <td>Clothes</td>
+    <td>Adult</td>    
+    <td>Male</td>
+    <td>Spring</td>
+    <td>2024-04-30</td>
+    <td>T-shirts</td>
+    <td>
+        <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+            View Details
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+    </td>
+</tr>
+<tr class="service-item" data-area="giza">
+    <td>2</td>
+    <td>Jane</td>
+    <td>Smith</td>
+    <td>Clothes</td>
+    <td>Child</td>
+    <td>Female</td>
+    <td>Winter</td>
+    <td>2024-04-29</td>
+    <td>Sweaters</td>
+    <td>
+        <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+            View Details
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+    </td>
+</tr>
+<tr class="service-item" data-area="aja">    <td>3</td>
+    <td>Michael</td>
+    <td>Johnson</td>
+    <td>Clothes</td>
+    <td>Teen</td>
+    <td>Male</td>
+    <td>Summer</td>
+    <td>2024-04-28</td>
+    <td>Shorts</td>
+    <td>
+        <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+            View Details
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+    </td>
+</tr>
+<tr class="service-item" data-age="new">    <td>4</td>
+    <td>Emily</td>
+    <td>Williams</td>
+    <td>Clothes</td>
+    <td>Adult</td>
+    <td>Female</td>
+    <td>Fall</td>
+    <td>2024-04-27</td>
+    <td>Jackets</td>
+    <td>
+        <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+            View Details
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+    </td>
+<!-- </tr>
+<tr class="service-item" data-age="child">    <td>5</td>
+    <td>David</td>
+    <td>Brown</td>
+    <td>Clothes</td>
+    <td>Child</td>
+    <td>Male</td>
+    <td>Spring</td>
+    <td>2024-04-26</td>
+    <td>Sneakers</td>
+    <td>
+        <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+            View Details
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+    </td>
+</tr>
+<tr class="service-item" data-age="teen">    <td>6</td>
+    <td>Sarah</td>
+    <td>Miller</td>
+    <td>Clothes</td>
+    <td>Teen</td>
+    <td>Female</td>
+    <td>Winter</td>
+    <td>2024-04-25</td>
+    <td>Leggings</td>
+    <td>
+        <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+            View Details
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+    </td>
+</tr>
+<tr class="service-item" data-age="adult">    <td>7</td>
+    <td>James</td>
+    <td>Anderson</td>
+    <td>Clothes</td>
+    <td>Adult</td>
+    <td>Male</td>
+    <td>Summer</td>
+    <td>2024-04-24</td>
+    <td>Sandals</td>
+    <td>
+        <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+            View Details
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+    </td>
+</tr>
+<tr class="service-item" data-age="child">    <td>8</td>
+    <td>Emma</td>
+    <td>Wilson</td>
+    <td>Clothes</td>
+    <td>Child</td>
+    <td>Female</td>
+    <td>Fall</td>
+    <td>2024-04-23</td>
+    <td>Jackets</td>
+    <td>
+        <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+            View Details
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+    </td>
+</tr>
+<tr class="service-item" data-age="teen">    <td>9</td>
+    <td>William</td>
+    <td>Martin</td>
+    <td>Clothes</td>
+    <td>Teen</td>
+    <td>Male</td>
+    <td>Spring</td>
+    <td>2024-04-22</td>
+    <td>T-shirts</td>
+    <td>
+        <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+            View Details
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+    </td>
+</tr>
+<tr class="service-item" data-age="adult">    <td>10</td>
+    <td>Olivia</td>
+    <td>Thompson</td>
+    <td>Clothes</td>
+    <td>Adult</td>
+    <td>Female</td>
+    <td>Winter</td>
+    <td>2024-04-21</td>
+    <td>Boots</td>
+    <td>
+        <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+            View Details
+            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a> -->
+    </td>
+</tr>
+<!-- End of Table Rows -->
 
-     
+            <!-- Remaining table rows -->
+        </tbody>
+    </table>
+    <br>
+    <!-- Table End -->
 
-
-<!-- Footer Start -->
-<div class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+   <!-- Footer Start -->
+   <div class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
@@ -383,11 +411,8 @@
     </div>
 </div>
 <!-- Footer End -->
-
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
 
     <!-- JavaScript Libraries -->
     <script src="team.js"></script>
@@ -401,7 +426,19 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script src="js/team.js"></script>
+    <script src="team.js"></script>
+    <script>
+        // Get all the buttons with class "fulfillBtn"
+        var buttons = document.querySelectorAll(".fulfillBtn");
+    
+        // Add event listener to each button
+        buttons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                // Redirect to the fulfilldonation page
+                window.location.href = "/Users/mariamossama/Desktop/free-nonprofit-website-template/Fulfilldonation.html";
+            });
+        });
+    </script>
 </body>
 
 </html>
