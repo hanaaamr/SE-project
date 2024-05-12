@@ -666,10 +666,10 @@ function filterByArea(area) {
         // Check if the data-area attribute of the element matches the selected area or if it's 'all'
         if (element.dataset.area === area || area === 'all') {
             // If matched, show the element
-            element.style.display = 'block';
+            element.closest('.team-item').style.display = 'block';
         } else {
             // If not matched, hide the element
-            element.style.display = 'none';
+            element.closest('.team-item').style.display = 'none';
         }
     });
 }
