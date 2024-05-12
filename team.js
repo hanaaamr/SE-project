@@ -508,22 +508,26 @@ else{
 
 
 function general0() {
-    var category = document.getElementById("categoryFilter").value.toLowerCase();
     var searchInput = document.getElementById("searchInput").value.toLowerCase();
 
-    var teams = document.querySelectorAll(".team-item");
-    var found = false; // Flag to check if any item is found
+    var teamItems = document.querySelectorAll(".team-item");
     
+    teamItems.forEach(function(team){
+        var itemText = item.querySelector("h5").textContent.toLowerCase();
+        // var categoryId = team.id.toLowerCase();
 
-    teams.forEach(function(team) {
-        var teamName = team.querySelector("h5").textContent.toLowerCase();
-        var categoryId = team.id.toLowerCase();
+                // if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
+                //     team.style.display = "block";
+                //     found = true;
+                // } else {
+                //     team.style.display = "none";
+                // }
+                if(itemText.includes(searchInput)){
 
-                if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
-                    team.style.display = "block";
+              itemText.style.display = "block";
                     found = true;
                 } else {
-                    team.style.display = "none";
+                    itemText.style.display = "none";
                 }
         
     });
