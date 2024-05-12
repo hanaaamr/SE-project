@@ -120,14 +120,12 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-4">
-                <select id="ageFilter" class="form-select"  onchange="filterByAge('adult')">
+                <select id="ageFilter" class="form-select" onchange="filterByAge(this.value)">
                     <option value="">All Ages</option>
                     <option value="Child">Child</option>
                     <option value="Teen">Teen</option>
-                    <option value="Adult" data-age="adult">Adult</option>
-                    
-                        <!-- Add more options as needed -->
-                    </select>
+                    <option value="Adult">Adult</option>
+                    <!-- Add more options as needed -->
                 </select>
             </div>
             <div class="col-md-4">
