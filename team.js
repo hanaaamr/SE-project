@@ -403,9 +403,9 @@ if (pickupTime) {
     }
 
     const now = new Date();
-    const etaTime = new Date(now.getTime() + etaMinutes * 60000);
-    const etaString = etaTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
-    etaDisplay.textContent = `Estimated Time of Arrival (ETA): ${etaString}`;
+        const etaTime = new Date(now.getTime() + etaMinutes * 60000);
+        const etaString = etaTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+        etaDisplay.textContent = `Estimated Time of Arrival (ETA): ${etaString}`;
 }
 }
 function orgHome(){
@@ -500,80 +500,30 @@ else{
 }
 
 }
+
+
 function general0() {
-    var searchInput = document.getElementById("searchInput").value.toLowerCase().trim();
+    var category = document.getElementById("categoryFilter").value.toLowerCase();
+    var searchInput = document.getElementById("searchInput").value.toLowerCase();
 
     var teams = document.querySelectorAll(".team-item");
     var found = false; // Flag to check if any item is found
     
-    teams.forEach(function(team) {
-        var teamName = team.querySelector("h4").textContent.toLowerCase();
 
-        if (teamName.includes(searchInput)) {
-            team.style.display = "block";
-            found = true;
-        } else {
-            team.style.display = "none";
-        }
+    teams.forEach(function(team) {
+        var teamName = team.querySelector("h5").textContent.toLowerCase();
+        var categoryId = team.id.toLowerCase();
+
+                if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
+                    team.style.display = "block";
+                    found = true;
+                } else {
+                    team.style.display = "none";
+                }
+        
     });
 
     if (!found) {
         alert("Not found");
-    }
-}
-
-
-// function search() {
-//     // Get the input value
-//     var input = document.getElementById('searchInput').value.toLowerCase();
-    
-//     // Get all the elements where we will search for upcoming words
-//     var elements = document.querySelectorAll('.service-item h4');
-
-//     // Loop through each element
-//     elements.forEach(function(element) {
-//         // Get the text content of the element and convert it to lowercase
-//         var text = element.textContent.toLowerCase();
-
-//         // Check if the input value is included in the text content
-//         if (text.includes(input)) {
-//             // If found, show the parent element
-//             element.closest('.col-lg-4').style.display = 'block';
-//         } else {
-//             // If not found, hide the parent element
-//             element.closest('.col-lg-4').style.display = 'none';
-//         }
-//     });
-// }
-
-function general0() {
-    // Get the input value
-    var input = document.getElementById('searchInput').value.toLowerCase();
-    
-    // Get all the elements where we will search for upcoming words
-    var elements = document.querySelectorAll('.service-item h4');
-
-    // Variable to track if any match is found
-    var found = false;
-
-    // Loop through each element
-    elements.forEach(function(element) {
-        // Get the text content of the element and convert it to lowercase
-        var text = element.textContent.toLowerCase();
-
-        // Check if the input value is included in the text content
-        if (text.includes(input)) {
-            // If found, show the parent element
-            element.closest('.col-lg-4').style.display = 'block';
-            found = true;
-        } else {
-            // If not found, hide the parent element
-            element.closest('.col-lg-4').style.display = 'none';
-        }
-    });
-
-    // If no match is found, display alert
-    if (!found) {
-        alert('No matching result found.');
     }
 }
