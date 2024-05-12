@@ -618,20 +618,20 @@ function filterByAge(age) {
 }
 
     function filterByArea(area) {
-        // Get all the elements representing different areas
-        var areaItems = document.querySelectorAll('.area-item');
-
-        // Loop through each area item
-        areaItems.forEach(function(areaItem) {
-            var itemArea = areaItem.dataset.area;
-
-            // Check if the area matches the selected area or if it's 'all'
-            if (itemArea === area || area === 'all') {
-                // If matched or 'all', show the area item
-                areaItem.style.display = 'block';
+        // Get all the elements where we will search for age
+        var elements = document.querySelectorAll('.service-item');
+    
+        // Loop through each element
+        elements.forEach(function(element) {
+            var ageText = element.dataset.age.toLowerCase();
+    
+            // Check if the age matches the selected age or if it's 'all'
+            if (ageText === age.toLowerCase() || age.toLowerCase() === 'all' ) {
+                // If matched, show the parent element
+                element.style.display = 'block';
             } else {
-                // If not matched, hide the area item
-                areaItem.style.display = 'none';
+                // If not matched, hide the parent element
+                element.style.display = 'none';
             }
         });
     }
