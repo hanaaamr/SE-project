@@ -501,39 +501,7 @@ else{
 
 }
 
-<<<<<<< HEAD
-function general0() {
-    // Get the input value
-    var input = document.getElementById('searchInput').value.toLowerCase();
-    
-    // Get all the elements where we will search for upcoming words
-    var elements = document.querySelectorAll('.service-item h4');
 
-    // Variable to track if any match is found
-    var found = false;
-
-    // Loop through each element
-    elements.forEach(function(element) {
-        // Get the text content of the element and convert it to lowercase
-        var text = element.textContent.toLowerCase();
-
-        // Check if the input value is included in the text content
-        if (text.includes(input)) {
-            // If found, show the parent element
-            element.closest('.col-lg-4').style.display = 'block';
-            found = true;
-        } else {
-            // If not found, hide the parent element
-            element.closest('.col-lg-4').style.display = 'none';
-        }
-    });
-
-    // If no match is found, display alert
-    if (!found) {
-        alert('No matching result found.');
-    }
-}
-=======
 
 function general0() {
     var category = document.getElementById("categoryFilter").value.toLowerCase();
@@ -560,4 +528,4 @@ function general0() {
         alert("Not found");
     }
 }
->>>>>>> 25b456ef8ce311fb7d1c3bd8146909752a9f1b20
+
