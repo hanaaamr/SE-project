@@ -462,3 +462,7 @@ function filterTable(category, searchTerm) {
     });
 }
 });
+
+function roleeeee(){
+    redirectToPage('role.html');
+}
