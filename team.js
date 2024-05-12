@@ -522,35 +522,26 @@ function general0() {
     }
 }
 
-function general00() {
-    var searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
-    var namesList = document.getElementById('namesList');
-    var notFoundMessage = document.getElementById('notFoundMessage');
-    
-    // Clear previous results
-    namesList.innerHTML = '';
-    
-    // Filter organizations based on search input
-    var filteredOrganizations = organizations.filter(function(organization) {
-        return organization.name.toLowerCase().includes(searchInput);
-    });
 
-    // Display filtered organizations or show not found message
-    if (filteredOrganizations.length > 0) {
-        filteredOrganizations.forEach(function(organization) {
-            var button = document.createElement('button');
-            button.className = 'btn btn-primary';
-            button.textContent = organization.name;
-            button.onclick = function() {
-                // Handle click event for the organization button
-                alert("You clicked on: " + organization.name);
-                // You can add more actions here if needed
-            };
-            namesList.appendChild(button);
-        });
-        notFoundMessage.style.display = 'none'; // Hide not found message
-    } else {
-        notFoundMessage.textContent = "This organization is not found";
-        notFoundMessage.style.display = 'block'; // Show not found message
-    }
+function search() {
+    // Get the input value
+    var input = document.getElementById('searchInput').value.toLowerCase();
+    
+    // Get all the elements where we will search for upcoming words
+    var elements = document.querySelectorAll('.service-item h4');
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        // Get the text content of the element and convert it to lowercase
+        var text = element.textContent.toLowerCase();
+
+        // Check if the input value is included in the text content
+        if (text.includes(input)) {
+            // If found, show the parent element
+            element.closest('.col-lg-4').style.display = 'block';
+        } else {
+            // If not found, hide the parent element
+            element.closest('.col-lg-4').style.display = 'none';
+        }
+    });
 }
