@@ -6,4 +6,7 @@ function submitted() {
     
 
 }
+function orgHome(){
+    redirectToPage('organization.html');
 
+}
