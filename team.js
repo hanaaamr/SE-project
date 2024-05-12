@@ -403,9 +403,9 @@ if (pickupTime) {
     }
 
     const now = new Date();
-    const etaTime = new Date(now.getTime() + etaMinutes * 60000);
-    const etaString = etaTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
-    etaDisplay.textContent = `Estimated Time of Arrival (ETA): ${etaString}`;
+        const etaTime = new Date(now.getTime() + etaMinutes * 60000);
+        const etaString = etaTime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+        etaDisplay.textContent = `Estimated Time of Arrival (ETA): ${etaString}`;
 }
 }
 function orgHome(){
@@ -501,6 +501,7 @@ else{
 
 }
 
+<<<<<<< HEAD
 function general0() {
     // Get the input value
     var input = document.getElementById('searchInput').value.toLowerCase();
@@ -532,3 +533,31 @@ function general0() {
         alert('No matching result found.');
     }
 }
+=======
+
+function general0() {
+    var category = document.getElementById("categoryFilter").value.toLowerCase();
+    var searchInput = document.getElementById("searchInput").value.toLowerCase();
+
+    var teams = document.querySelectorAll(".team-item");
+    var found = false; // Flag to check if any item is found
+    
+
+    teams.forEach(function(team) {
+        var teamName = team.querySelector("h5").textContent.toLowerCase();
+        var categoryId = team.id.toLowerCase();
+
+                if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
+                    team.style.display = "block";
+                    found = true;
+                } else {
+                    team.style.display = "none";
+                }
+        
+    });
+
+    if (!found) {
+        alert("Not found");
+    }
+}
+>>>>>>> 25b456ef8ce311fb7d1c3bd8146909752a9f1b20
