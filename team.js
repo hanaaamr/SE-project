@@ -466,3 +466,8 @@ function filterTable(category, searchTerm) {
 function roleeeee(){
     redirectToPage('role.html');
 }
+
+function goHome2() {
+    redirectToPage('donorhome.html');
+
+}
