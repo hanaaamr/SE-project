@@ -615,23 +615,21 @@ function filterByAge(age) {
             element.style.display = 'none';
         }
     });
-}
+}function filterByArea(area) {
+    // Get all the elements where we will search for area
+    var elements = document.querySelectorAll('.team-text');
 
-    function filterByArea(area) {
-        // Get all the elements where we will search for age
-        var elements = document.querySelectorAll('.service-item');
-    
-        // Loop through each element
-        elements.forEach(function(element) {
-            var ageText = element.dataset.age.toLowerCase();
-    
-            // Check if the age matches the selected age or if it's 'all'
-            if (ageText === age.toLowerCase() || age.toLowerCase() === 'all' ) {
-                // If matched, show the parent element
-                element.style.display = 'block';
-            } else {
-                // If not matched, hide the parent element
-                element.style.display = 'none';
-            }
-        });
-    }
+    // Loop through each element
+    elements.forEach(function(element) {
+        var areaText = element.dataset.type.toLowerCase();
+
+        // Check if the area matches the selected area or if it's 'all'
+        if (areaText === area.toLowerCase() || area.toLowerCase() === 'all') {
+            // If matched, show the parent element
+            element.style.display = 'block';
+        } else {
+            // If not matched, hide the parent element
+            element.style.display = 'none';
+        }
+    });
+}
