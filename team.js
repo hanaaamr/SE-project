@@ -507,56 +507,94 @@ else{
 
 
 
-// function general0() {
-//     var searchInput = document.getElementById("searchInput").value.toLowerCase();
-
-//     var teamItems = document.querySelectorAll(".team-item");
-    
-//     teamItems.forEach(function(team){
-//         var itemText = item.querySelector("h5").textContent.toLowerCase();
-//         // var categoryId = team.id.toLowerCase();
-
-//                 // if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
-//                 //     team.style.display = "block";
-//                 //     found = true;
-//                 // } else {
-//                 //     team.style.display = "none";
-//                 // }
-//                 if(itemText.includes(searchInput)){
-
-//               itemText.style.display = "block";
-//                     found = true;
-//                 } else {
-//                     itemText.style.display = "none";
-//                 }
-        
-//     });
-
-//     if (!found) {
-//         alert("Not found");
-//     }
-// }
 function general0() {
     var searchInput = document.getElementById("searchInput").value.toLowerCase();
 
     var teamItems = document.querySelectorAll(".team-item");
     
-    var found = false; // Flag to check if any item is found
-
     teamItems.forEach(function(team){
-        var itemText = team.querySelector("h5").textContent.toLowerCase();
+        var itemText = item.querySelector("h5").textContent.toLowerCase();
+        // var categoryId = team.id.toLowerCase();
 
-        if (itemText.includes(searchInput)) {
-            team.style.display = "block";
-            found = true;
-        } else {
-            team.style.display = "none";
-        }
+                // if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
+                //     team.style.display = "block";
+                //     found = true;
+                // } else {
+                //     team.style.display = "none";
+                // }
+                if(itemText.includes(searchInput)){
+
+              item.style.display = "block";
+                    found = true;
+                } else {
+                    item.style.display = "none";
+                }
+        
     });
 
     if (!found) {
         alert("Not found");
     }
 }
+function search1() {
+    // Get the input value
+    var input = document.getElementById('searchInput').value.toLowerCase();
+    
+    // Get all the elements where we will search for upcoming words
+    var elements = document.querySelectorAll('.team-item h5');
 
+    // Variable to track if any match is found
+    var found = false;
 
+    // Loop through each element
+    elements.forEach(function(element) {
+        // Get the text content of the element and convert it to lowercase
+        var text = element.textContent.toLowerCase();
+
+        // Check if the input value is included in the text content
+        if (text.includes(input)) {
+            // If found, show the parent element
+            element.closest('.team-item').style.display = 'block';
+            found = true;
+        } else {
+            // If not found, hide the parent element
+            element.closest('.team-item').style.display = 'none';
+        }
+    });
+
+    // If no match is found, display alert
+    if (!found) {
+        alert('No matching result found.');
+    }
+}
+function general0() {
+    // Get the input value
+    var input = document.getElementById('searchInput').value.toLowerCase();
+    
+    // Get all the elements where we will search for upcoming words
+    var elements = document.querySelectorAll('.service-item h4');
+
+    // Variable to track if any match is found
+    var found = false;
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        // Get the text content of the element and convert it to lowercase
+        var text = element.textContent.toLowerCase();
+
+        // Check if the input value is included in the text content
+        if (text.includes(input)) {
+            // If found, show the parent element
+            element.closest('.col-lg-4').style.display = 'block';
+            found = true;
+        } else {
+            // If not found, hide the parent element
+            element.closest('.col-lg-4').style.display = 'none';
+        }
+    });
+
+    // If no match is found, display alert
+    if (!found) {
+        alert('No matching result found.');
+    }
+}
