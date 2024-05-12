@@ -617,7 +617,7 @@ function filterByAge(age) {
     });
 }
 
-    function filterByArea(area) {
+    function filterByArea(age) {
         // Get all the elements where we will search for age
         var elements = document.querySelectorAll('.service-item');
     
