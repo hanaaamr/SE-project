@@ -5,7 +5,7 @@ var organizations = [
     { name: "Bedaya" }
 ];
 
-  var log22 = "";
+  var log22 = "karin";
  var pass = "";
  
 // function searchRegOrganizations() {
@@ -307,7 +307,7 @@ function Login(){
  redirectToPage('Login.html')
 }
 function log2() {
-   const log22= document.getElementById('name').value;
+log22= document.getElementById('name').value;
  pass = document.getElementById('password').value;
  
  if (log22 === "hana" && pass === "hana") {
@@ -490,7 +490,7 @@ function goHome2() {
 
     }
    else if(log22==="sarah"){
-        redirectToPage('donorhome2.html');
+        redirectToPage('donorhome.html');
 
 
     }
