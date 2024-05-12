@@ -151,31 +151,34 @@
     <!-- Table start -->
     <br>
     <style>
+        table {
+            width: 100%; /* Set a fixed width for the table */
+            table-layout: fixed; /* Ensure that the table layout remains fixed */
+        }
+    
         th, td {
             padding: 8px; /* Add padding for better appearance */
             text-align: left; /* Align text to the left */
             width: 100px; /* Set a fixed width for table cells */
-        }
-    
-        tr {
-            height: 50px; /* Set a fixed height for table rows */
+            word-wrap: break-word; /* Allow long words to break into multiple lines */
         }
     </style>
+    
     <table>
-      
-            <thead>
-                <tr class="service-item" data-age="all">                
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Clothing Items</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>Season</th>
-                    <th>Date</th>
-                    <th>Included Items</th>
-                    <th>Donate</th>
-                </tr>
-            </thead>
+        <thead>
+            <tr>
+                <th style="width: 100px;">Request ID</th>
+                <th style="width: 100px;">First Name</th>
+                <th style="width: 100px;">Last Name</th>
+                <th style="width: 100px;">Clothing Items</th>
+                <th style="width: 100px;">Age</th>
+                <th style="width: 100px;">Gender</th>
+                <th style="width: 100px;">Season</th>
+                <th style="width: 100px;">Date</th>
+                <th style="width: 100px;">Included Items</th>
+                <th style="width: 100px;">Donate</th>
+            </tr>
+        </thead>
         <tbody>
             <!-- Table Rows -->
            
