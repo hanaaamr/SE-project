@@ -136,7 +136,7 @@
                     <select id="areaFilter" class="form-select" onchange="filterByArea(this.value)">
                         <option value="all">All Areas</option>
                         <option value="new">New Cairo</option>
-                        <option value="giza">Giza</option>
+                        <option value="aja">All ee</option>
                         <!-- Add more options as needed -->
                     </select>
                 </div>
@@ -171,78 +171,178 @@
 
 
 
-    <!-- Team Start --><div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;"></div>
-        <div class="row justify-content-center align-items-center">
 
-            <div class="col-lg-3 col-md-6 wow fadeInUp" id="food" data-area="new" data-wow-delay="0.1s">
-                <div class="team-item position-relative rounded overflow-hidden">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/1.jpg" alt="">
-                    </div>
-                    <div class="team-text bg-light text-center p-4 area-item">
-                        <h5>Food Bank</h5>
-                        <div class="team-social text-center">
-                            <a class="btn btn-square" href="#" onclick="FoodBankD()">
-                                <i>View</i>
-                            </a>
-                        </div>
-                        <div class="team-social text-center">
-                            <a class="btn btn-square" href="#" onclick="Del('food')">
-                                <i>Delete</i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<style>
+    table {
+        width: 100%;
+        table-layout: fixed; /* Ensure fixed table layout */
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        width: 100px;
+        word-wrap: break-word; /* Allow long words to wrap */
+    }
+
+    tr {
+        height: 50px; /* Set fixed height for rows */
+    }
+
+    tbody tr {
+        height: auto; /* Reset height for table body rows */
+    }
+</style>
+<table>
+    <thead>
+        <tr class="service-item" data-age="all">                <th>Request ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Clothing Items</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Season</th>
+            <th>Date</th>
+            <th>Included Items</th>
+            <th>Donate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Table Rows -->
+       
+ <tr class="service-item" data-age="adult">    <td>1</td>
+<td>John</td>
+<td>Doe</td>
+<td>Clothes</td>
+<td>Adult</td>    
+<td>Male</td>
+<td>Spring</td>
+<td>2024-04-30</td>
+<td>T-shirts</td>
+<td>
+    <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+        View Details
+        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+            <i class="fa fa-arrow-right"></i>
+        </div>
+    </a>
+</td>
+</tr>
+<tr class="service-item" data-age="child">
+<td>2</td>
+<td>Jane</td>
+<td>Smith</td>
+<td>Clothes</td>
+<td>Child</td>
+<td>Female</td>
+<td>Winter</td>
+<td>2024-04-29</td>
+<td>Sweaters</td>
+<td>
+    <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+        View Details
+        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+            <i class="fa fa-arrow-right"></i>
+        </div>
+    </a>
+</td>
+</tr>
+<tr class="service-item" data-age="Teen">    <td>3</td>
+<td>Michael</td>
+<td>Johnson</td>
+<td>Clothes</td>
+<td>Teen</td>
+<td>Male</td>
+<td>Summer</td>
+<td>2024-04-28</td>
+<td>Shorts</td>
+<td>
+    <a class="btn btn-outline-primary py-2 px-3" href="clothdetails.html" >
+        View Details
+        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
+            <i class="fa fa-arrow-right"></i>
+        </div>
+    </a>
+</td>
+</tr>
+
+
+   </td>
+</tr>
+
+    <!-- Team Start -->
+  
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;" ></div>
+            <div class="row justify-content-center align-items-center">
+              
+<div class="col-lg-3 col-md-6 wow fadeInUp" id="food" data-wow-delay="0.1s" data-area="new" >
+    <div class="team-item position-relative rounded overflow-hidden">
+        <div class="overflow-hidden">
+            <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/1.jpg" alt="">
+        </div>
+        <div class="team-text bg-light text-center p-4 area-item">
+            <h5>Food Bank</h5>
+            <div class="team-social text-center">
+                <a class="btn btn-square" href="#" onclick="FoodBankD()">
+                    <i>View</i>
+                </a>                          
             </div>
-
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-area="giza" id="ahl" data-wow-delay="0.3s">
-                <div class="team-item position-relative rounded overflow-hidden">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/2.jpg" alt="">
-                    </div>
-                    <div class="team-text bg-light text-center p-4 area-item">
-                        <h5 class="team-text">Ahl Masr</h5>
-                        <div class="team-social text-center">
-                            <a class="btn btn-square" href="#" onclick="AhlMasrD()">
-                                <i>View</i>
-                            </a>
-                        </div>
-                        <div class="team-social text-center">
-                            <a class="btn btn-square" href="#" onclick="Del('ahl')">
-                                <i>Delete</i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="team-social text-center">
+                <a class="btn btn-square" href="#" onclick="Del('food')">
+                    <i>Delete</i>
+                </a>  
             </div>
-
-            <div class="col-lg-3 col-md-6 wow fadeInUp" id="bed" data-area="new" data-wow-delay="0.5s">
-                <div class="team-item position-relative rounded overflow-hidden">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/3.jpg" alt="">
-                    </div>
-                    <div class="team-text bg-light text-center p-4">
-                        <h5>Bedaya</h5>
-                        <div class="team-social text-center">
-                            <a class="btn btn-square" href="#" onclick="BedayaD()">
-                                <i>View</i>
-                            </a>
-                        </div>
-                        <div class="team-social text-center">
-                            <a class="btn btn-square" href="#" onclick="Del('bed')">
-                                <i>Delete</i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </div>
 
+<div class="col-lg-3 col-md-6 wow fadeInUp" id="ahl" data-wow-delay="0.3s" data-area="nott">
+    <div class="team-item position-relative rounded overflow-hidden">
+        <div class="overflow-hidden">
+            <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/2.jpg" alt="">
+        </div>
+        <div class="team-text bg-light text-center p-4 area-item">
+            <h5>Ahl Masr</h5>
+            <div class="team-social text-center">
+                <a class="btn btn-square" href="#" onclick="AhlMasrD()">
+                    <i>View</i>
+                </a>  
+            </div>
+            <div class="team-social text-center">
+                <a class="btn btn-square" href="#" onclick="Del('ahl')">
+                    <i>Delete</i>
+                </a>  
+            </div>
+        </div>
+    </div>
+</div>
+ <div class="col-lg-3 col-md-6 wow fadeInUp" id="bed" data-wow-delay="0.5s" data-area="nott">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/3.jpg" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Bedaya</h5>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#" onclick="BedayaD()">
+                                    <i>View</i>
+                                </a>                               
+                            </div>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#" onclick="Del('bed')">
+                                    <i>Delete</i>
+                                </a>  
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    
     <!-- Team End -->
 
      
