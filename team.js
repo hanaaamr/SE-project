@@ -607,7 +607,7 @@ function filterByAge(age) {
         var ageText = element.dataset.age.toLowerCase();
 
         // Check if the age matches the selected age or if it's 'all'
-        if (ageText === age.toLowerCase() || age.toLowerCase() === 'all' || ageText==="all") {
+        if (ageText === age.toLowerCase() || age.toLowerCase() === 'all' ) {
             // If matched, show the parent element
             element.style.display = 'block';
         } else {
