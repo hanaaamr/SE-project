@@ -334,6 +334,11 @@ function log2() {
 
 
  }
+ else 
+ if(name==="karin" && pass === "karin"){
+    redirectToPage('donorhome2.html')
+
+ }
  else {
      alert('Invalid username or password');
      return false; 
