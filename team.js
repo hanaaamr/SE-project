@@ -95,32 +95,54 @@ function Del(id) {
 
 
 
-function searchRegOrganizations() {
-var category = document.getElementById("categoryFilter").value.toLowerCase();
-var searchInput = document.getElementById("searchInput").value.toLowerCase();
+// function searchRegOrganizations() {
+// var category = document.getElementById("categoryFilter").value.toLowerCase();
+// var searchInput = document.getElementById("searchInput").value.toLowerCase();
 
-var teams = document.querySelectorAll(".team-item");
-var found = false; // Flag to check if any item is found
+// var teams = document.querySelectorAll(".team-item");
+// var found = false; // Flag to check if any item is found
 
 
-teams.forEach(function(team) {
-    var teamName = team.querySelector("h5").textContent.toLowerCase();
-    var categoryId = team.id.toLowerCase();
+// teams.forEach(function(team) {
+//     var teamName = team.querySelector("h5").textContent.toLowerCase();
+//     var categoryId = team.id.toLowerCase();
 
     
-            if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
-                team.style.display = "block";
-                found = true;
-            } else {
-                team.style.display = "none";
-            }
-    }
-);
+//             if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
+//                 team.style.display = "block";
+//                 found = true;
+//             } else {
+//                 team.style.display = "none";
+//             }
+//     }
+// );
 
-if (!found) {
-    alert("Not found");
+// if (!found) {
+//     alert("Not found");
+// }
+// }
+function searchRegOrganizations() {
+    var searchInput = document.getElementById("searchInput").value.toLowerCase();
+    
+    var items = document.querySelectorAll(".item");
+    var found = false; // Flag to check if any item is found
+
+    items.forEach(function(item) {
+        var itemName = item.textContent.toLowerCase();
+
+        if (itemName.includes(searchInput)) {
+            item.style.display = "block";
+            found = true;
+        } else {
+            item.style.display = "none";
+        }
+    });
+
+    if (!found) {
+        alert("Not found");
+    }
 }
-}
+
 
 
 
