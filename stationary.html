@@ -122,25 +122,39 @@
                         </div>
                         <h1 class="display-6 mb-5">Select Quantity to fulfill Donation</h1>
 
-                        <p class="mb-5">Maximum: 5</p>
+                        <p class="mb-5">Needed: 5</p>
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle py-2 px-3 me-3" type="button" id="quantityDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                               Select Quantity
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="quantityDropdown">
-                              <!-- Dropdown items will go here -->
-                              <li><a class="dropdown-item" href="#">1</a></li>
-                              <li><a class="dropdown-item" href="#">2</a></li>
-                              <li><a class="dropdown-item" href="#">3</a></li>
-                              <li><a class="dropdown-item" href="#">4</a></li>
-                              <li><a class="dropdown-item" href="#">5</a></li>
-                              <li><a class="dropdown-item" href="#">6</a></li>
-                              <li><a class="dropdown-item" href="#">7</a></li>
-                              <li><a class="dropdown-item" href="#">8</a></li>
-                              <li><a class="dropdown-item" href="#">9</a></li>
-                              <li><a class="dropdown-item" href="#">10</a></li>
-                              <!-- Add more items as needed -->
-                            </ul>
+                                <!-- Dropdown items will go here -->
+                                <li><a class="dropdown-item" href="#" data-quantity="1">1</a></li>
+                                <li><a class="dropdown-item" href="#" data-quantity="2">2</a></li>
+                                <li><a class="dropdown-item" href="#" data-quantity="3">3</a></li>
+                                <li><a class="dropdown-item" href="#" data-quantity="4">4</a></li>
+                                <li><a class="dropdown-item" href="#" data-quantity="5">5</a></li>
+                                <li><a class="dropdown-item" href="#" data-quantity="6">6</a></li>
+                                <li><a class="dropdown-item" href="#" data-quantity="7">7</a></li>
+                                <li><a class="dropdown-item" href="#" data-quantity="8">8</a></li>
+                                <li><a class="dropdown-item" href="#" data-quantity="9">9</a></li>
+                                <li><a class="dropdown-item" href="#" data-quantity="10">10</a></li>
+                                <script>
+                                  // Get the button and dropdown items
+                                  const button = document.getElementById('quantityDropdown');
+                                  const dropdownItems = document.querySelectorAll('.dropdown-item');
+                              
+                                  // Add click event listeners to dropdown items
+                                  dropdownItems.forEach(item => {
+                                      item.addEventListener('click', function() {
+                                          // Update the button text with the selected quantity
+                                          button.textContent = item.dataset.quantity;
+                                      });
+                                  });
+                              </script>
+                              
+                                <!-- Add more items as needed -->
+                              </ul>
                           </div>
                           <br>
                           <a class="btn btn-outline-primary py-2 px-3" href="schedulepickup.html">
