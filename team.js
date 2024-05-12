@@ -521,3 +521,36 @@ function general0() {
         alert("Not found");
     }
 }
+
+function general00() {
+    var searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
+    var namesList = document.getElementById('namesList');
+    var notFoundMessage = document.getElementById('notFoundMessage');
+    
+    // Clear previous results
+    namesList.innerHTML = '';
+    
+    // Filter organizations based on search input
+    var filteredOrganizations = organizations.filter(function(organization) {
+        return organization.name.toLowerCase().includes(searchInput);
+    });
+
+    // Display filtered organizations or show not found message
+    if (filteredOrganizations.length > 0) {
+        filteredOrganizations.forEach(function(organization) {
+            var button = document.createElement('button');
+            button.className = 'btn btn-primary';
+            button.textContent = organization.name;
+            button.onclick = function() {
+                // Handle click event for the organization button
+                alert("You clicked on: " + organization.name);
+                // You can add more actions here if needed
+            };
+            namesList.appendChild(button);
+        });
+        notFoundMessage.style.display = 'none'; // Hide not found message
+    } else {
+        notFoundMessage.textContent = "This organization is not found";
+        notFoundMessage.style.display = 'block'; // Show not found message
+    }
+}
