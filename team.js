@@ -636,3 +636,41 @@ function filterByAge(age) {
         }
     });
 }
+
+function filterByGender(gender) {
+    // Get all the elements where we will search for gender
+    var elements = document.querySelectorAll('.service-item');
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        var genderText = element.dataset.gender.toLowerCase();
+
+        // Check if the gender matches the selected gender or if it's 'all'
+        if (genderText === gender.toLowerCase() || gender.toLowerCase() === 'all') {
+            // If matched, show the parent element
+            element.style.display = 'block';
+        } else {
+            // If not matched, hide the parent element
+            element.style.display = 'none';
+        }
+    });
+}
+
+function filterBySeason(season) {
+    // Get all the elements where we will search for season
+    var elements = document.querySelectorAll('.service-item');
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        var seasonText = element.dataset.season.toLowerCase();
+
+        // Check if the season matches the selected season or if it's 'all'
+        if (seasonText === season.toLowerCase() || season.toLowerCase() === 'all') {
+            // If matched, show the parent element
+            element.style.display = 'block';
+        } else {
+            // If not matched, hide the parent element
+            element.style.display = 'none';
+        }
+    });
+}

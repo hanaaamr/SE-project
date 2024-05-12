@@ -129,7 +129,7 @@
                 </select>
             </div>
             <div class="col-md-4">
-                <select id="genderFilter" class="form-select">
+                <select id="genderFilter" class="form-select" onchange="filterByGender(this.value)">
                     <option value="">All Genders</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -137,7 +137,7 @@
                 </select>
             </div>
             <div class="col-md-4">
-                <select id="seasonFilter" class="form-select">
+                <select id="seasonFilter" class="form-select"  onchange="filterBySeason(this.value)">
                     <option value="">All Seasons</option>
                     <option value="Summer">Summer</option>
                     <option value="Winter">Winter</option>
@@ -188,7 +188,7 @@
         <tbody>
             <!-- Table Rows -->
            
-     <tr class="service-item" data-age="adult">    <td>1</td>
+     <tr class="service-item" data-age="adult" data-gender="Male">    <td>1</td>
     <td>John</td>
     <td>Doe</td>
     <td>Clothes</td>
@@ -206,7 +206,7 @@
         </a>
     </td>
 </tr>
-<tr class="service-item" data-age="child">
+<tr class="service-item" data-age="child" data-gender="Female">
     <td>2</td>
     <td>Jane</td>
     <td>Smith</td>
@@ -225,7 +225,7 @@
         </a>
     </td>
 </tr>
-<tr class="service-item" data-age="Teen">    <td>3</td>
+<tr class="service-item" data-age="Teen"  data-gender="Male">    <td>3</td>
     <td>Michael</td>
     <td>Johnson</td>
     <td>Clothes</td>
@@ -243,7 +243,7 @@
         </a>
     </td>
 </tr>
-<tr class="service-item" data-age="adult">    <td>4</td>
+<tr class="service-item" data-age="adult" data-gender="female">    <td>4</td>
     <td>Emily</td>
     <td>Williams</td>
     <td>Clothes</td>
@@ -261,7 +261,7 @@
         </a>
     </td>
 </tr>
-<tr class="service-item" data-age="child">    <td>5</td>
+<tr class="service-item" data-age="child"  data-gender="Male">    <td>5</td>
     <td>David</td>
     <td>Brown</td>
     <td>Clothes</td>
@@ -279,7 +279,7 @@
         </a>
     </td>
 </tr>
-<tr class="service-item" data-age="teen">    <td>6</td>
+<tr class="service-item" data-age="teen"  data-gender="female">    <td>6</td>
     <td>Sarah</td>
     <td>Miller</td>
     <td>Clothes</td>
@@ -297,7 +297,7 @@
         </a>
     </td>
 </tr>
-<tr class="service-item" data-age="adult">    <td>7</td>
+<tr class="service-item" data-age="adult" data-gender="Male">    <td>7</td>
     <td>James</td>
     <td>Anderson</td>
     <td>Clothes</td>
@@ -315,7 +315,7 @@
         </a>
     </td>
 </tr>
-<tr class="service-item" data-age="child">    <td>8</td>
+<tr class="service-item" data-age="child"  data-gender="female">    <td>8</td>
     <td>Emma</td>
     <td>Wilson</td>
     <td>Clothes</td>
@@ -333,7 +333,7 @@
         </a>
     </td>
 </tr>
-<tr class="service-item" data-age="teen">    <td>9</td>
+<tr class="service-item" data-age="teen"  data-gender="Male">    <td>9</td>
     <td>William</td>
     <td>Martin</td>
     <td>Clothes</td>
@@ -351,7 +351,7 @@
         </a>
     </td>
 </tr>
-<tr class="service-item" data-age="adult">    <td>10</td>
+<tr class="service-item" data-age="adult"  data-gender="female">    <td>10</td>
     <td>Olivia</td>
     <td>Thompson</td>
     <td>Clothes</td>
