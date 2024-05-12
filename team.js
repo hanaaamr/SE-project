@@ -621,7 +621,7 @@ function filterByAge(age) {
 
     // Loop through each element
     elements.forEach(function(element) {
-        var areaText = element.dataset.type.toLowerCase();
+        var areaText = element.dataset.area.toLowerCase();
 
         // Check if the area matches the selected area or if it's 'all'
         if (areaText === area.toLowerCase() || area.toLowerCase() === 'all') {
