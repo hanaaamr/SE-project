@@ -426,7 +426,7 @@ return true;
 // var category = document.getElementById("categoryFilter").value.toLowerCase();
 // var searchInput = document.getElementById("searchInput").value.toLowerCase();
 // }
-function submitDonation() {
+function submitDonation1() {
 // Display a confirmation message
 alert("Donation Application is sent successfully! \nYour donation application is currently pending.");
 redirectToPage("donorhome.html")
