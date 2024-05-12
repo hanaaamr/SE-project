@@ -5,8 +5,8 @@ var organizations = [
     { name: "Bedaya" }
 ];
 
-var name = null;
- var pass = null;
+var name2 = "";
+ var pass = "";
  
 // function searchRegOrganizations() {
     //     var searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
@@ -307,10 +307,10 @@ function Login(){
  redirectToPage('Login.html')
 }
 function log2() {
-  name = document.getElementById('name').value;
+  name2 = document.getElementById('name').value;
   pass = document.getElementById('password').value;
  
- if (name === "hana" && pass === "hana") {
+ if (name2 === "hana" && pass === "hana") {
 
      alert('correct username or password');
      redirectToPage('team.html');
@@ -318,27 +318,27 @@ function log2() {
     
  } 
  else
- if(name==="sarah" && pass === "sarah"){
+ if(nam2==="sarah" && pass === "sarah"){
      alert('correct username or password');
      redirectToPage('donorhome1.html');
      
 
  }
  else 
- if(name==="ma" && pass === "ma"){
+ if(name2==="ma" && pass === "ma"){
     redirectToPage('donorhome.html');
 
  }
 
  else
- if(name==="menna" && pass === "menna"){
+ if(name2==="menna" && pass === "menna"){
      redirectToPage('organization.html');
 
 
 
  }
  else 
- if(name==="karin" && pass === "karin"){
+ if(name2==="karin" && pass === "karin"){
     redirectToPage('donorhome2.html')
 
  }
@@ -481,15 +481,15 @@ function roleeeee(){
 }
 
 function goHome2() {
-    if(name==="karin"){
+    if(name2==="karin"){
     redirectToPage('donorhome2.html');
     }
-    if(name==="ma"){
+    if(name2==="ma"){
         redirectToPage('donorhome1.html');
 
 
     }
-    if(name==="sarah"){
+    if(name2==="sarah"){
         redirectToPage('donorhome2.html');
 
 
