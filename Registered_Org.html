@@ -67,7 +67,7 @@
                 </div>
 
                 <div class="d-none d-lg-flex ms-2">
-                    <a class="btn btn-outline-primary py-2 px-3" href="#" onclick="goHome()">
+                    <a class="btn btn-outline-primary py-2 px-3" href="team.html">
                         HOME
                         <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                             <i class="fa fa-home"></i>
@@ -126,20 +126,23 @@
                         <input type="text" id="searchInput" class="form-control" placeholder="Search by Organization Name">
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-primary" onclick="searchRegOrganizations()">Search</button>
+                        <button class="btn btn-primary" onclick="search1()">Search</button>
                     </div>
                 </div>
-                <br> <br> <br>
 
+                <br> <br> <br> <br>
+                
                 <div class="col-md-4">
-                    <select id="areaFilter" class="form-select">
-                        <option value="">Area</option>
-                        <option value="New Cairo">New Cairo</option>
+                    <select id="areaFilter" class="form-select" onchange="filterByArea(this.value)">
+                        <option value="all">All Areas</option>
+                        <option value="new">New Cairo</option>
                         <option value="Giza">Giza</option>
+                        <!-- Add more options as needed -->
                     </select>
                 </div>
+                
                 <div class="col-md-4">
-                    <select id="organizationTypeFilter" class="form-select">
+                    <select id="organizationTypeFilter" class="form-select" onchange="filterByType(this.value)">
                         <option value="">Organization Type</option>
                         <option value="Health">Health</option>
                         <option value="Food">Food</option>
@@ -147,7 +150,7 @@
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <select id="governorateFilter" class="form-select">
+                    <select id="governorateFilter" class="form-select"   onchange=" filterByGovernorate(this.value)">
                         <option value="">Governorate</option>
                         <option value="Cairo">Cairo</option>
                     </select>
@@ -162,53 +165,55 @@
 
 
  
-
     <!-- Team Start -->
+  
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;"></div>
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;" ></div>
             <div class="row justify-content-center align-items-center">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" id="food" data-wow-delay="0.1s">
-                    <div class="team-item position-relative rounded overflow-hidden">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/1.jpg" alt="">
-                        </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>Food Bank</h5>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href="#" onclick="FoodBankD()">
-                                    <i>View</i>
-                                </a>                          
-                            </div>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href="#" onclick="Del('food')">
-                                    <i>Delete</i>
-                                </a>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" id="ahl" data-wow-delay="0.3s">
-                    <div class="team-item position-relative rounded overflow-hidden">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/2.jpg" alt="">
-                        </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>Ahl Masr</h5>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href="#" onclick="AhlMasrD()">
-                                    <i>View</i>
-                                </a>  
-                            </div>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href="#" onclick="Del('ahl')">
-                                    <i>Delete</i>
-                                </a>  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" id="bed" data-wow-delay="0.5s">
+              
+<div class="col-lg-3 col-md-6 wow fadeInUp" id="food" data-wow-delay="0.1s" data-area="new"  data-type="Food" data-governarate="NO">
+    <div class="team-item position-relative rounded overflow-hidden">
+        <div class="overflow-hidden">
+            <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/1.jpg" alt="">
+        </div>
+        <div class="team-text bg-light text-center p-4 area-item">
+            <h5>Food Bank</h5>
+            <div class="team-social text-center">
+                <a class="btn btn-square" href="#" onclick="FoodBankD()">
+                    <i>View</i>
+                </a>                          
+            </div>
+            <div class="team-social text-center">
+                <a class="btn btn-square" href="#" onclick="Del('food')">
+                    <i>Delete</i>
+                </a>  
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp" id="ahl" data-wow-delay="0.3s" data-area="Giza" data-type="Burn" data-governarate="Cairo">
+    <div class="team-item position-relative rounded overflow-hidden">
+        <div class="overflow-hidden">
+            <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/2.jpg" alt="">
+        </div>
+        <div class="team-text bg-light text-center p-4 area-item">
+            <h5>Ahl Masr</h5>
+            <div class="team-social text-center">
+                <a class="btn btn-square" href="#" onclick="AhlMasrD()">
+                    <i>View</i>
+                </a>  
+            </div>
+            <div class="team-social text-center">
+                <a class="btn btn-square" href="#" onclick="Del('ahl')">
+                    <i>Delete</i>
+                </a>  
+            </div>
+        </div>
+    </div>
+</div>
+ <div class="col-lg-3 col-md-6 wow fadeInUp" id="bed" data-wow-delay="0.5s" data-area="new"  data-type="Health" data-governarate="Cairo">
                     <div class="team-item position-relative rounded overflow-hidden">
                         <div class="overflow-hidden">
                             <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="img/3.jpg" alt="">
@@ -227,7 +232,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
     </div>

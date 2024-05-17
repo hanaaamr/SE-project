@@ -96,29 +96,65 @@ function Del(id) {
 
 
 function searchRegOrganizations() {
-var category = document.getElementById("categoryFilter").value.toLowerCase();
-var searchInput = document.getElementById("searchInput").value.toLowerCase();
+    var category = document.getElementById("categoryFilter").value.toLowerCase();
+    var searchInput = document.getElementById("searchInput").value.toLowerCase();
 
-var teams = document.querySelectorAll(".team-item");
-var found = false; // Flag to check if any item is found
+    var teams = document.querySelectorAll(".team-item");
+    var found = false; // Flag to check if any item is found
+    
 
+    teams.forEach(function(team) {
+        var teamName = team.querySelector("h5").textContent.toLowerCase();
+        var categoryId = team.id.toLowerCase();
 
-teams.forEach(function(team) {
-    var teamName = team.querySelector("h5").textContent.toLowerCase();
-    var categoryId = team.id.toLowerCase();
+        switch (category) {
+            case "governorate":
+                if (searchInput === "cairo" && (teamName.includes("bedaya") || teamName.includes("ahl masr") || teamName.includes("food bank")) ){
+                    team.style.display = "block";
+                    found = true;
+                } else {
+                    team.style.display = "none";
+                }
+                break;
+            case "organization type":
+                if (searchInput === "burn" && teamName.includes("ahl masr")) {
+                    team.style.display = "block";
+                    found = true;
+                } else if (searchInput === "health" && teamName.includes("bedaya")) {
+                    team.style.display = "block";
+                    found = true;
+                } else if ((searchInput === "hunger" || searchInput === "food") && teamName.includes("food bank")) {
+                    team.style.display = "block";
+                    found = true;
+                } else {
+                    team.style.display = "none";
+                }
+                break;
+            case "area":
+                if (searchInput === "giza" && teamName.includes("bedaya")) {
+                    team.style.display = "block";
+                    found = true;
+                } else if (searchInput === "new cairo" && (teamName.includes("food bank") || teamName.includes("ahl masr"))) {
+                    team.style.display = "block";
+                    found = true;
+                } else {
+                    team.style.display = "none";
+                }
+                break;
+            default:
+                if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
+                    team.style.display = "block";
+                    found = true;
+                } else {
+                    team.style.display = "none";
+                }
+        }
+    });
 
-            if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
-                team.style.display = "block";
-                found = true;
-            } else {
-                team.style.display = "none";
-            }
+    // If no item is found, display "Not found" message
+    if (!found) {
+        alert("Not found");
     }
-);
-
-if (!found) {
-    alert("Not found");
-}
 }
 
 
@@ -472,22 +508,26 @@ else{
 
 
 function general0() {
-    var category = document.getElementById("categoryFilter").value.toLowerCase();
     var searchInput = document.getElementById("searchInput").value.toLowerCase();
 
-    var teams = document.querySelectorAll(".team-item");
-    var found = false; // Flag to check if any item is found
+    var teamItems = document.querySelectorAll(".team-item");
     
+    teamItems.forEach(function(team){
+        var itemText = item.querySelector("h5").textContent.toLowerCase();
+        // var categoryId = team.id.toLowerCase();
 
-    teams.forEach(function(team) {
-        var teamName = team.querySelector("h5").textContent.toLowerCase();
-        var categoryId = team.id.toLowerCase();
+                // if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
+                //     team.style.display = "block";
+                //     found = true;
+                // } else {
+                //     team.style.display = "none";
+                // }
+                if(itemText.includes(searchInput)){
 
-                if ((category === "" || category === categoryId) && (searchInput === "" || teamName.includes(searchInput))) {
-                    team.style.display = "block";
+              item.style.display = "block";
                     found = true;
                 } else {
-                    team.style.display = "none";
+                    item.style.display = "none";
                 }
         
     });
@@ -496,4 +536,174 @@ function general0() {
         alert("Not found");
     }
 }
+function search1() {
+    // Get the input value
+    var input = document.getElementById('searchInput').value.toLowerCase();
+    
+    // Get all the elements where we will search for upcoming words
+    var elements = document.querySelectorAll('.team-item h5');
 
+    // Variable to track if any match is found
+    var found = false;
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        // Get the text content of the element and convert it to lowercase
+        var text = element.textContent.toLowerCase();
+
+        // Check if the input value is included in the text content
+        if (text.includes(input)) {
+            // If found, show the parent element
+            element.closest('.team-item').style.display = 'block';
+            found = true;
+        } else {
+            // If not found, hide the parent element
+            element.closest('.team-item').style.display = 'none';
+        }
+    });
+
+    // If no match is found, display alert
+    if (!found) {
+        alert('No matching result found.');
+    }
+}
+function general0() {
+    // Get the input value
+    var input = document.getElementById('searchInput').value.toLowerCase();
+    
+    // Get all the elements where we will search for upcoming words
+    var elements = document.querySelectorAll('.service-item h4');
+
+    // Variable to track if any match is found
+    var found = false;
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        // Get the text content of the element and convert it to lowercase
+        var text = element.textContent.toLowerCase();
+
+        // Check if the input value is included in the text content
+        if (text.includes(input)) {
+            // If found, show the parent element
+            element.closest('.col-lg-4').style.display = 'block';
+            found = true;
+        } else {
+            // If not found, hide the parent element
+            element.closest('.col-lg-4').style.display = 'none';
+        }
+    });
+
+    // If no match is found, display alert
+    if (!found) {
+        alert('No matching result found.');
+    }
+}
+function filterByAge(age) {
+    // Get all the elements where we will search for age
+    var elements = document.querySelectorAll('.service-item');
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        var ageText = element.dataset.age.toLowerCase();
+
+        // Check if the age matches the selected age or if it's 'all'
+        if (ageText === age.toLowerCase() || age.toLowerCase() === 'all' ) {
+            // If matched, show the parent element
+            element.style.display = 'block';
+        } else {
+            // If not matched, hide the parent element
+            element.style.display = 'none';
+        }
+    });
+}
+function filterByGender(gender) {
+    // Get all the elements where we will search for gender
+    var elements = document.querySelectorAll('.service-item');
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        var genderText = element.dataset.gender.toLowerCase();
+
+        // Check if the gender matches the selected gender or if it's 'all'
+        if (genderText === gender.toLowerCase() || gender.toLowerCase() === 'all') {
+            // If matched, show the parent element
+            element.style.display = 'block';
+        } else {
+            // If not matched, hide the parent element
+            element.style.display = 'none';
+        }
+    });
+}
+
+function filterBySeason(season) {
+    // Get all the elements where we will search for season
+    var elements = document.querySelectorAll('.service-item');
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        var seasonText = element.dataset.season.toLowerCase();
+
+        // Check if the season matches the selected season or if it's 'all'
+        if (seasonText === season.toLowerCase() || season.toLowerCase() === 'all') {
+            // If matched, show the parent element
+            element.style.display = 'block';
+        } else {
+            // If not matched, hide the parent element
+            element.style.display = 'none';
+        }
+    });
+}
+
+
+
+
+function filterByArea(area) {
+    // Get all the elements with the class 'team-item'
+    var elements = document.querySelectorAll('.col-lg-3');
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        // Check if the data-area attribute of the element matches the selected area or if it's 'all'
+        if (element.dataset.area === area || area === 'all') {
+            // If matched, show the element
+            element.closest('.col-lg-3').style.display = 'block';
+        } else {
+            // If not matched, hide the element
+            element.closest('.col-lg-3').style.display = 'none';
+        }
+    });
+}
+function filterByGovernorate(governorate) {
+    // Get all the elements with the class 'col-lg-3'
+    var elements = document.querySelectorAll('.col-lg-3');
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        // Check if the data-governorate attribute of the element matches the selected governorate or if it's 'all'
+       
+            // If matched, show the element
+            element.closest('.col-lg-3').style.display = 'block';
+      
+            // If not matched, hide the element
+            if (element.dataset.area === "No" )
+            element.closest('.col-lg-3').style.display = 'none';
+        }
+    );
+}
+
+function filterByType(type) {
+    // Get all the elements with the class 'col-lg-3'
+    var elements = document.querySelectorAll('.col-lg-3');
+
+    // Loop through each element
+    elements.forEach(function(element) {
+        // Check if the data-type attribute of the element matches the selected type or if it's 'all'
+        if (element.dataset.type === type || type === 'all') {
+            // If matched, show the element
+            element.style.display = 'block';
+        } else {
+            // If not matched, hide the element
+            element.style.display = 'none';
+        }
+    });
+}
